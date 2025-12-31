@@ -11,6 +11,8 @@ const path = require("path");
 const utils = require("./lib/utils");
 const handler = require("./lib/handler");
 const qrcode = require("qrcode-terminal");
+const figlet = require("figlet");
+
 
 // --- 1. BOOTSTRAP BOT STATE ---
 const botState = {
@@ -23,11 +25,44 @@ const botState = {
     ghostBuffer: new Map(),
     sleepCooldowns: new Map(),
     antiLinkGroups: new Set(),
-    groupCounts: new Map() // Tracks bulk spam per group
+    groupCounts: new Map(), // Tracks bulk spam per group
+    settings: fs.readJsonSync("./database/bot_settings.json", { throws: false }) || { autoBio: true, customBio: null }
 };
 
+// --- 2. BOOT ART & UTILS ---
+function printBootArt() {
+    console.clear();
+    console.log(figlet.textSync('Starry MD', {
+        font: 'Standard',
+        horizontalLayout: 'default',
+        verticalLayout: 'default',
+        width: 80,
+        whitespaceBreak: true
+    }));
+    utils.log("SYSTEM", "Starry MD v2.0 :: System Online");
+    utils.log("SYSTEM", `[Mode] ${botState.mode.toUpperCase()} :: [Owner] ${config.OWNER_ID}`);
+    console.log("----------------------------------------------------------------");
+}
+
+async function updateBio(sock) {
+    if (!botState.settings.autoBio) return;
+
+    try {
+        const uptime = process.uptime();
+        const hours = Math.floor(uptime / 3600);
+        const minutes = Math.floor((uptime % 3600) / 60);
+
+        let bio = botState.settings.customBio || `Starry MD | 🟢 Online | Mode: ${botState.mode.replace('$', '')} | Uptime: ${hours}h ${minutes}m`;
+        await sock.updateProfileStatus(bio);
+        utils.log("BIO", "WhatsApp 'About' updated successfully.");
+    } catch (e) {
+        utils.log("ERROR", `Failed to update bio: ${e.message}`);
+    }
+}
+
 async function startStarry() {
-    utils.log("SYSTEM", "Starting Starry MD Core 2.0...");
+    printBootArt();
+    utils.log("SYSTEM", "Initializing Starry MD Core...");
 
     const { state, saveCreds } = await useMultiFileAuthState("database/session");
     const { version, isLatest } = await fetchLatestBaileysVersion();
@@ -58,6 +93,10 @@ async function startStarry() {
             }
         } else if (connection === "open") {
             utils.log("CONN", "✅ Starry MD 2.0 Connected Successfully!");
+
+            // Start Bio Update Loop (Every hour)
+            updateBio(sock);
+            setInterval(() => updateBio(sock), 3600000);
         }
     });
 

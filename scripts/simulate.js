@@ -15,7 +15,7 @@ const mockSender = process.argv[3] || config.OWNER_ID + "@s.whatsapp.net";
 
 // 1. Mock botState
 let botState = {
-    mode: "$private",
+    mode: "$public",
     persona: "default",
     awayMessage: "",
     cooldowns: new Map(),
@@ -36,6 +36,9 @@ const mockSock = {
         console.log(`\n[OUTGOING] -> ${jid}`);
         console.log(`Content:`, JSON.stringify(content, null, 2));
         return { key: { id: "mock-reply-id" } };
+    },
+    sendPresenceUpdate: async (type, jid) => {
+        console.log(`[PRESENCE] ${type} for ${jid}`);
     },
     readMessages: async (keys) => console.log(`[READ] Viewed status/message.`),
 };
