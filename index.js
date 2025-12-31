@@ -12,6 +12,7 @@ const utils = require("./lib/utils");
 const handler = require("./lib/handler");
 const qrcode = require("qrcode-terminal");
 const figlet = require("figlet");
+const config = require("./config");
 
 
 // --- 1. BOOTSTRAP BOT STATE ---

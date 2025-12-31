@@ -15,7 +15,7 @@ const mockSender = process.argv[3] || config.OWNER_ID + "@s.whatsapp.net";
 
 // 1. Mock botState
 let botState = {
-    mode: "$public",
+    mode: "$private",
     persona: "default",
     awayMessage: "",
     cooldowns: new Map(),
