@@ -1,0 +1,25 @@
+{
+  "name": "starry-md",
+  "version": "1.0.0",
+  "description": "Starry MD - A Personal WhatsApp User-Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.1.3",
+    "@hapi/boom": "^10.0.1",
+    "@whiskeysockets/baileys": "^7.0.0-rc.9",
+    "axios": "^1.13.2",
+    "dotenv": "^16.6.1",
+    "fluent-ffmpeg": "^2.1.3",
+    "fs-extra": "^11.3.3",
+    "link-preview-js": "^3.0.4",
+    "pino": "^8.21.0",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
