@@ -5,7 +5,7 @@ require('dotenv').config();
  */
 module.exports = {
     // Owner Details
-    OWNER_ID: "2348141680626", // Your WhatsApp ID without +
+    OWNER_ID: process.env.OWNER_ID || "2348141680626", // Your WhatsApp ID without +
     OWNER_NAME: "Starry",
 
     // Command Prefixes
