@@ -1,9 +1,7 @@
 node_modules/
-auth_info_baileys/
+session/
 .env
 database/store.json
-# node index.js
 database/warns.json
 # *.log
-*.log
 *.bak.js

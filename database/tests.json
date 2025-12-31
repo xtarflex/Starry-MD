@@ -1,0 +1,1002 @@
+[
+    {
+        "id": 1,
+        "name": "Stress Test #1 (STRANGER in Group)",
+        "sender": "stranger_1@s.whatsapp.net",
+        "isGroup": true,
+        "body": ".Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 2,
+        "name": "Stress Test #2 (OWNER in Group)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": true,
+        "body": "$ping",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 3,
+        "name": "Stress Test #3 (FRIEND in Group)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": true,
+        "body": ".Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": true,
+        "expectHandshake": false
+    },
+    {
+        "id": 4,
+        "name": "Stress Test #4 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 5,
+        "name": "Stress Test #5 (STRANGER in Group)",
+        "sender": "stranger_5@s.whatsapp.net",
+        "isGroup": true,
+        "body": ".Hello World",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 6,
+        "name": "Stress Test #6 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": true,
+        "expectHandshake": false
+    },
+    {
+        "id": 7,
+        "name": "Stress Test #7 (OWNER in Group)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": true,
+        "body": "$ping",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 8,
+        "name": "Stress Test #8 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 9,
+        "name": "Stress Test #9 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": "$ping",
+        "type": "stickerMessage",
+        "expectCooldown": true,
+        "expectHandshake": false
+    },
+    {
+        "id": 10,
+        "name": "Stress Test #10 (STRANGER in Group)",
+        "sender": "stranger_10@s.whatsapp.net",
+        "isGroup": true,
+        "body": ".Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 11,
+        "name": "Stress Test #11 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": "$ping",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 12,
+        "name": "Stress Test #12 (OWNER in Group)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": true,
+        "body": "Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 13,
+        "name": "Stress Test #13 (STRANGER in DM)",
+        "sender": "stranger_13@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": true
+    },
+    {
+        "id": 14,
+        "name": "Stress Test #14 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 15,
+        "name": "Stress Test #15 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 16,
+        "name": "Stress Test #16 (STRANGER in DM)",
+        "sender": "stranger_16@s.whatsapp.net",
+        "isGroup": false,
+        "body": "$ping",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": true
+    },
+    {
+        "id": 17,
+        "name": "Stress Test #17 (STRANGER in Group)",
+        "sender": "stranger_17@s.whatsapp.net",
+        "isGroup": true,
+        "body": ".Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 18,
+        "name": "Stress Test #18 (FRIEND in Group)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": true,
+        "body": "$ping",
+        "type": "conversation",
+        "expectCooldown": true,
+        "expectHandshake": false
+    },
+    {
+        "id": 19,
+        "name": "Stress Test #19 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": "$ping",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 20,
+        "name": "Stress Test #20 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": "$ping",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 21,
+        "name": "Stress Test #21 (STRANGER in DM)",
+        "sender": "stranger_21@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": true,
+        "expectHandshake": true
+    },
+    {
+        "id": 22,
+        "name": "Stress Test #22 (OWNER in Group)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": true,
+        "body": "Hello World",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 23,
+        "name": "Stress Test #23 (STRANGER in DM)",
+        "sender": "stranger_23@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": true
+    },
+    {
+        "id": 24,
+        "name": "Stress Test #24 (STRANGER in Group)",
+        "sender": "stranger_24@s.whatsapp.net",
+        "isGroup": true,
+        "body": "$ping",
+        "type": "conversation",
+        "expectCooldown": true,
+        "expectHandshake": false
+    },
+    {
+        "id": 25,
+        "name": "Stress Test #25 (STRANGER in DM)",
+        "sender": "stranger_25@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": true
+    },
+    {
+        "id": 26,
+        "name": "Stress Test #26 (STRANGER in DM)",
+        "sender": "stranger_26@s.whatsapp.net",
+        "isGroup": false,
+        "body": "$ping",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": true
+    },
+    {
+        "id": 27,
+        "name": "Stress Test #27 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 28,
+        "name": "Stress Test #28 (OWNER in Group)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": true,
+        "body": "$ping",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 29,
+        "name": "Stress Test #29 (STRANGER in DM)",
+        "sender": "stranger_29@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": true
+    },
+    {
+        "id": 30,
+        "name": "Stress Test #30 (OWNER in Group)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": true,
+        "body": "Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 31,
+        "name": "Stress Test #31 (STRANGER in DM)",
+        "sender": "stranger_31@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": true
+    },
+    {
+        "id": 32,
+        "name": "Stress Test #32 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 33,
+        "name": "Stress Test #33 (FRIEND in Group)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": true,
+        "body": "$ping",
+        "type": "stickerMessage",
+        "expectCooldown": true,
+        "expectHandshake": false
+    },
+    {
+        "id": 34,
+        "name": "Stress Test #34 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": "$ping",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 35,
+        "name": "Stress Test #35 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 36,
+        "name": "Stress Test #36 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": true,
+        "expectHandshake": false
+    },
+    {
+        "id": 37,
+        "name": "Stress Test #37 (FRIEND in Group)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": true,
+        "body": ".Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 38,
+        "name": "Stress Test #38 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 39,
+        "name": "Stress Test #39 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 40,
+        "name": "Stress Test #40 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 41,
+        "name": "Stress Test #41 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": "$ping",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 42,
+        "name": "Stress Test #42 (STRANGER in DM)",
+        "sender": "stranger_42@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "conversation",
+        "expectCooldown": true,
+        "expectHandshake": true
+    },
+    {
+        "id": 43,
+        "name": "Stress Test #43 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": "$ping",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 44,
+        "name": "Stress Test #44 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 45,
+        "name": "Stress Test #45 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": "$ping",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 46,
+        "name": "Stress Test #46 (OWNER in Group)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": true,
+        "body": ".Hello World",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 47,
+        "name": "Stress Test #47 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 48,
+        "name": "Stress Test #48 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": "$ping",
+        "type": "extendedTextMessage",
+        "expectCooldown": true,
+        "expectHandshake": false
+    },
+    {
+        "id": 49,
+        "name": "Stress Test #49 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 50,
+        "name": "Stress Test #50 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 51,
+        "name": "Stress Test #51 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 52,
+        "name": "Stress Test #52 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 53,
+        "name": "Stress Test #53 (STRANGER in Group)",
+        "sender": "stranger_53@s.whatsapp.net",
+        "isGroup": true,
+        "body": "$ping",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 54,
+        "name": "Stress Test #54 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": true,
+        "expectHandshake": false
+    },
+    {
+        "id": 55,
+        "name": "Stress Test #55 (FRIEND in Group)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": true,
+        "body": ".Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 56,
+        "name": "Stress Test #56 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 57,
+        "name": "Stress Test #57 (STRANGER in Group)",
+        "sender": "stranger_57@s.whatsapp.net",
+        "isGroup": true,
+        "body": "Hello World",
+        "type": "conversation",
+        "expectCooldown": true,
+        "expectHandshake": false
+    },
+    {
+        "id": 58,
+        "name": "Stress Test #58 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 59,
+        "name": "Stress Test #59 (OWNER in Group)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": true,
+        "body": "$ping",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 60,
+        "name": "Stress Test #60 (FRIEND in Group)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": true,
+        "body": ".Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": true,
+        "expectHandshake": false
+    },
+    {
+        "id": 61,
+        "name": "Stress Test #61 (STRANGER in DM)",
+        "sender": "stranger_61@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": true
+    },
+    {
+        "id": 62,
+        "name": "Stress Test #62 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": "$ping",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 63,
+        "name": "Stress Test #63 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": true,
+        "expectHandshake": false
+    },
+    {
+        "id": 64,
+        "name": "Stress Test #64 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 65,
+        "name": "Stress Test #65 (STRANGER in DM)",
+        "sender": "stranger_65@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": true
+    },
+    {
+        "id": 66,
+        "name": "Stress Test #66 (STRANGER in Group)",
+        "sender": "stranger_66@s.whatsapp.net",
+        "isGroup": true,
+        "body": "$ping",
+        "type": "extendedTextMessage",
+        "expectCooldown": true,
+        "expectHandshake": false
+    },
+    {
+        "id": 67,
+        "name": "Stress Test #67 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": "$ping",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 68,
+        "name": "Stress Test #68 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": "$ping",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 69,
+        "name": "Stress Test #69 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 70,
+        "name": "Stress Test #70 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 71,
+        "name": "Stress Test #71 (OWNER in Group)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": true,
+        "body": "$ping",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 72,
+        "name": "Stress Test #72 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 73,
+        "name": "Stress Test #73 (OWNER in Group)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": true,
+        "body": ".Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 74,
+        "name": "Stress Test #74 (FRIEND in Group)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": true,
+        "body": "$ping",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 75,
+        "name": "Stress Test #75 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": true,
+        "expectHandshake": false
+    },
+    {
+        "id": 76,
+        "name": "Stress Test #76 (STRANGER in DM)",
+        "sender": "stranger_76@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": true
+    },
+    {
+        "id": 77,
+        "name": "Stress Test #77 (STRANGER in Group)",
+        "sender": "stranger_77@s.whatsapp.net",
+        "isGroup": true,
+        "body": ".Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 78,
+        "name": "Stress Test #78 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": true,
+        "expectHandshake": false
+    },
+    {
+        "id": 79,
+        "name": "Stress Test #79 (FRIEND in Group)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": true,
+        "body": ".Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 80,
+        "name": "Stress Test #80 (STRANGER in DM)",
+        "sender": "stranger_80@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": true
+    },
+    {
+        "id": 81,
+        "name": "Stress Test #81 (STRANGER in DM)",
+        "sender": "stranger_81@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "conversation",
+        "expectCooldown": true,
+        "expectHandshake": true
+    },
+    {
+        "id": 82,
+        "name": "Stress Test #82 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 83,
+        "name": "Stress Test #83 (STRANGER in Group)",
+        "sender": "stranger_83@s.whatsapp.net",
+        "isGroup": true,
+        "body": "Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 84,
+        "name": "Stress Test #84 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 85,
+        "name": "Stress Test #85 (OWNER in Group)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": true,
+        "body": ".Hello World",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 86,
+        "name": "Stress Test #86 (STRANGER in DM)",
+        "sender": "stranger_86@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": true
+    },
+    {
+        "id": 87,
+        "name": "Stress Test #87 (STRANGER in DM)",
+        "sender": "stranger_87@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": true,
+        "expectHandshake": true
+    },
+    {
+        "id": 88,
+        "name": "Stress Test #88 (STRANGER in DM)",
+        "sender": "stranger_88@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": true
+    },
+    {
+        "id": 89,
+        "name": "Stress Test #89 (STRANGER in DM)",
+        "sender": "stranger_89@s.whatsapp.net",
+        "isGroup": false,
+        "body": "$ping",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": true
+    },
+    {
+        "id": 90,
+        "name": "Stress Test #90 (STRANGER in DM)",
+        "sender": "stranger_90@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "extendedTextMessage",
+        "expectCooldown": true,
+        "expectHandshake": true
+    },
+    {
+        "id": 91,
+        "name": "Stress Test #91 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 92,
+        "name": "Stress Test #92 (FRIEND in Group)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": true,
+        "body": "$ping",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 93,
+        "name": "Stress Test #93 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "stickerMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 94,
+        "name": "Stress Test #94 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 95,
+        "name": "Stress Test #95 (STRANGER in DM)",
+        "sender": "stranger_95@s.whatsapp.net",
+        "isGroup": false,
+        "body": ".Hello World",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": true
+    },
+    {
+        "id": 96,
+        "name": "Stress Test #96 (STRANGER in Group)",
+        "sender": "stranger_96@s.whatsapp.net",
+        "isGroup": true,
+        "body": ".Hello World",
+        "type": "conversation",
+        "expectCooldown": true,
+        "expectHandshake": false
+    },
+    {
+        "id": 97,
+        "name": "Stress Test #97 (STRANGER in Group)",
+        "sender": "stranger_97@s.whatsapp.net",
+        "isGroup": true,
+        "body": "$ping",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 98,
+        "name": "Stress Test #98 (FRIEND in DM)",
+        "sender": "123456@s.whatsapp.net",
+        "isGroup": false,
+        "body": "$ping",
+        "type": "extendedTextMessage",
+        "expectCooldown": false,
+        "expectHandshake": false
+    },
+    {
+        "id": 99,
+        "name": "Stress Test #99 (STRANGER in Group)",
+        "sender": "stranger_99@s.whatsapp.net",
+        "isGroup": true,
+        "body": "$ping",
+        "type": "conversation",
+        "expectCooldown": true,
+        "expectHandshake": false
+    },
+    {
+        "id": 100,
+        "name": "Stress Test #100 (OWNER in DM)",
+        "sender": "2348141680626@s.whatsapp.net",
+        "isGroup": false,
+        "body": "Hello World",
+        "type": "conversation",
+        "expectCooldown": false,
+        "expectHandshake": false
+    }
+]
