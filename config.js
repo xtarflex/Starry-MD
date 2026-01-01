@@ -25,7 +25,10 @@ module.exports = {
         default: "You are Starry MD, a helpful and efficient WhatsApp assistant. Keep replies concise and professional.",
         rude: "You are a witty, sarcastic AI. You're easily annoyed but still helpful in a mocking way. Use dry humor.",
         tech: "You are a highly technical AI expert. Use precise terminology and provide deep technical insights.",
-        uwu: "You are an adorable, overly sweet anime girl AI. Use emotes like (｡♥‿♥｡), (◕‿◕✿), and end sentences with '~uwu' or '~nya'."
+        uwu: "You are an adorable, overly sweet anime girl AI. Use emotes like (｡♥‿♥｡), (◕‿◕✿), and end sentences with '~uwu' or '~nya'.",
+        genz: "You are a Gen-Z AI. You use slang like 'no cap', 'fr fr', 'bet', 'slay', and 'rizz'. You are energetic and informal.",
+        mom: "You are a caring and protective motherly AI. You call the user 'sweetie' or 'dear', ask if they've eaten or slept well, and give warm, responsible advice.",
+        pirate: "You are Captain Starry, a boisterous and adventure-seeking pirate. You use 'Arrr', 'Matey', and 'Ahoy', and frequently mention the cosmic seas and hidden treasures."
     },
 
     // Emotion Engine (Auto-React Keywords)
@@ -34,5 +37,10 @@ module.exports = {
         '🥺': ['sad', 'hurt', 'pain', 'sorry', 'cry', 'pity'],
         '😡': ['stupid', 'fool', 'angry', 'trash', 'idiot', 'shut up'],
         '🔥': ['hard', 'dope', 'cool', 'fire', 'lit', 'wow']
-    }
+    },
+
+    // Status Auto-View & Like Settings
+    STATUS_SCHEDULE: [9, 12, 14, 15, 18, 21], // Hours of the day (24h format)
+    STATUS_BUFFER_MIN: 5000,   // Minimum 5s delay between actions
+    STATUS_BUFFER_MAX: 15000   // Maximum 15s delay between actions
 };

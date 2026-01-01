@@ -26,6 +26,9 @@ let botState = {
     handshakeWaiting: new Set(),
     processedMessages: new Set(),
     contacts: fs.readJsonSync("./database/contacts.json", { throws: false }) || {},
+    reactions: fs.readJsonSync("./database/reactions.json", { throws: false }) || {},
+    settings: fs.readJsonSync("./database/bot_settings.json", { throws: false }) || { autoBio: true, customBio: null, viewOnceMode: "chat" },
+    memory: {},
     ownerLID: "mock-owner-lid"
 };
 
