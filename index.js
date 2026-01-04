@@ -67,14 +67,13 @@ async function updateBio(sock) {
 }
 
 /**
- * Fireproof Contact Sync: Load contacts from stored database
- * Note: Baileys doesn't have fetchAllContacts - we rely on passive sync from events
+ * Contact Sync: Load from database + rely on passive sync
+ * Note: We'll also use pushName detection in handler for immediate recognition
  */
 async function syncExistingContacts(sock) {
     try {
         utils.log("SYNC", "Loading contacts from database...");
 
-        // Load existing contacts from database (already populated from contacts.upsert events)
         const contactFile = './database/contacts.json';
         if (fs.existsSync(contactFile)) {
             const savedContacts = fs.readJsonSync(contactFile, { throws: false }) || {};
@@ -154,11 +153,19 @@ async function startStarry() {
         utils.log("RECV", `Processing ${m.messages.length} incoming packet(s)...`);
 
         for (const msg of m.messages) {
-            if (!msg.message) continue;
+            // Get remoteJid for all checks
+            const from = msg.key.remoteJid;
+
+            // --- STATUS NOTIFICATION CAPTURE ---
+            if (from === 'status@broadcast') {
+                const statusModule = require('./lib/status');
+                await statusModule.saveStatus(msg, sock);
+                // Don't add to ghost buffer, continue to next message
+                continue;
+            }
 
             // --- GHOST BUFFERING (For Anti-Delete) ---
-            const from = msg.key.remoteJid;
-            if (!msg.key.fromMe && from !== 'status@broadcast') {
+            if (!msg.key.fromMe) {
                 const bufferKey = `${from}_${msg.key.id}`;
                 botState.ghostBuffer.set(bufferKey, {
                     msg,
@@ -198,10 +205,41 @@ async function startStarry() {
                     const pushName = cached.msg.pushName || "User";
                     const sender = cached.msg.key.participant || from;
 
+                    // Store deleted message for reveal command
+                    if (!botState.deletedMessages) botState.deletedMessages = new Map();
+                    const deleteId = `del_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+                    botState.deletedMessages.set(deleteId, {
+                        msg: cached.msg,
+                        from: from,
+                        sender: sender,
+                        pushName: pushName,
+                        timestamp: cached.timestamp
+                    });
+
+                    // Clean old deleted messages (keep for 1 hour)
+                    setTimeout(() => {
+                        botState.deletedMessages.delete(deleteId);
+                    }, 3600000);
+
+                    // Send subtle alert in the chat (only owner will understand)
+                    const subtleAlerts = [
+                        "*coughs* 👀",
+                        "*clears throat* 🤔",
+                        "*hmm* 🧐",
+                        "*interesting* 👁️",
+                        "*noted* 📝"
+                    ];
+                    const randomAlert = subtleAlerts[Math.floor(Math.random() * subtleAlerts.length)];
+                    await sock.sendMessage(from, { text: randomAlert });
+
+                    // Send detailed alert to owner's DM
                     const alertMsg = `🎯 *STARRY HUNT: DELETED MSG DETECTED*\n\n` +
                         `👤 *From:* ${pushName}\n` +
                         `📍 *Chat:* ${from}\n` +
-                        `⏰ *Original Time:* ${new Date(cached.timestamp).toLocaleTimeString()}`;
+                        `⏰ *Original Time:* ${new Date(cached.timestamp).toLocaleTimeString()}\n` +
+                        `🔑 *ID:* ${deleteId}\n\n` +
+                        `💡 Quote this message and use \`.reveal\` to expose it in the chat.\n` +
+                        `🤫 A subtle alert was sent in the chat.`;
 
                     await sock.sendMessage(botState.ownerID, { text: alertMsg });
                     // Use utils.copyNForward correctly

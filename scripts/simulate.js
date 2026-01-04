@@ -4,18 +4,18 @@ const utils = require("../lib/utils");
 const fs = require("fs-extra");
 
 /**
- * Starry MD: Mock Simulator
+ * Starry MD: Mock Simulator - Groq AI Test
  * ------------------------
- * This script allows you to test your handler logic without a physical phone.
- * Usage: node scripts/simulate.js "$ping" [senderId]
+ * This script tests the Groq AI functionality
+ * Usage: node scripts/simulate.js
  */
 
-const mockBody = process.argv[2] || "$ping";
-const mockSender = process.argv[3] || config.OWNER_ID + "@s.whatsapp.net";
+const mockBody = ".ai hello, tell me about yourself";
+const mockSender = config.OWNER_ID + "@s.whatsapp.net";
 
 // 1. Mock botState
 let botState = {
-    mode: "$private",
+    mode: "$public",
     persona: "default",
     awayMessage: "",
     cooldowns: new Map(),
@@ -29,7 +29,9 @@ let botState = {
     reactions: fs.readJsonSync("./database/reactions.json", { throws: false }) || {},
     settings: fs.readJsonSync("./database/bot_settings.json", { throws: false }) || { autoBio: true, customBio: null, viewOnceMode: "chat" },
     memory: {},
-    ownerLID: "mock-owner-lid"
+    ownerID: config.OWNER_ID + "@s.whatsapp.net",
+    botJid: "mock-bot-id@s.whatsapp.net",
+    chatHistory: new Map()
 };
 
 // 2. Mock sock (Baileys)
@@ -37,44 +39,52 @@ const mockSock = {
     user: { id: "mock-bot-id:1@s.whatsapp.net" },
     sendMessage: async (jid, content) => {
         console.log(`\n[OUTGOING] -> ${jid}`);
-        console.log(`Content:`, JSON.stringify(content, null, 2));
+        if (content.text) {
+            console.log(`\n📨 AI Response:\n${"-".repeat(50)}\n${content.text}\n${"-".repeat(50)}\n`);
+        } else if (content.react) {
+            console.log(`[REACT] ${content.react.text}`);
+        } else {
+            console.log(`Content:`, JSON.stringify(content, null, 2));
+        }
         return { key: { id: "mock-reply-id" } };
     },
     sendPresenceUpdate: async (type, jid) => {
-        console.log(`[PRESENCE] ${type} for ${jid}`);
+        console.log(`[PRESENCE] ${type}`);
     },
-    readMessages: async (keys) => console.log(`[READ] Viewed status/message.`),
+    readMessages: async (keys) => { },
 };
 
 // 3. Mock Message Object (Baileys Upsert)
-const mockMessage = {
-    messages: [{
-        key: {
-            remoteJid: mockSender.includes("@g.us") ? mockSender : mockSender,
-            fromMe: mockSender === botIdGenerator(),
-            id: "MOCK_" + Date.now(),
-            participant: mockSender.includes("@g.us") ? mockSender : undefined
-        },
-        message: {
-            conversation: mockBody
-        },
-        messageTimestamp: Math.floor(Date.now() / 1000),
-        pushName: "SimulatedUser"
-    }],
-    type: "notify"
+const mockMsg = {
+    key: {
+        remoteJid: mockSender,
+        fromMe: false,
+        id: "MOCK_" + Date.now(),
+        participant: undefined
+    },
+    message: {
+        conversation: mockBody
+    },
+    messageTimestamp: Math.floor(Date.now() / 1000),
+    pushName: "SimulatedUser"
 };
 
-function botIdGenerator() {
-    return "mock-bot-id@s.whatsapp.net";
-}
-
 // 4. Execute
-console.log(`\n🌠 Starry MD Simulator 🌠`);
-console.log(`--------------------------`);
+console.log(`\n⚡ Starry MD - Groq AI Test ⚡`);
+console.log(`${"=".repeat(50)}`);
 console.log(`[INCOMING] <- ${mockSender}`);
 console.log(`Message: "${mockBody}"\n`);
+console.log(`Testing Groq AI (DeepSeek R1 Model)...`);
+console.log(`${"=".repeat(50)}\n`);
 
-handler(mockMessage, mockSock, botState).then(() => {
-    console.log(`\n--------------------------`);
-    console.log(`[SIM] Simulation Complete.`);
+handler(mockMsg, mockSock, botState).then(() => {
+    console.log(`\n${"=".repeat(50)}`);
+    console.log(`[TEST] Simulation Complete.`);
+    console.log(`\nIf you see an AI response above, Groq is working! ✅`);
+    console.log(`If you see an error, check the error message for details.`);
+    console.log(`\n💡 Make sure GROQ_API_KEY is set in your .env file`);
+    console.log(`   Get free key from: https://console.groq.com`);
+}).catch(err => {
+    console.error(`\n❌ Simulation Error:`, err.message);
+    console.error(`\nFull Error:`, err);
 });

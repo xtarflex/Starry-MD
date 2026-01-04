@@ -75,7 +75,7 @@
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/StarryMD.git
+git clone https://github.com/xtarflex/StarryMD.git
 cd StarryMD
 
 # Install dependencies
