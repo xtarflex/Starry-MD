@@ -1,0 +1,547 @@
+{
+  "users": {
+    "253781631586553@lid": {
+      "name": "Starry Xander",
+      "wallet": 0,
+      "bank": 647,
+      "xp": 85,
+      "level": 2,
+      "health": 100,
+      "max_health": 100,
+      "inventory": {
+        "rod": 0,
+        "pickaxe": 0,
+        "sword": 0,
+        "shield": 0,
+        "potion": 0
+      },
+      "durability": {
+        "pickaxe": 0
+      },
+      "cooldowns": {
+        "daily": 1767736961417,
+        "work": 1767706324565,
+        "fish": 0,
+        "mine": 0,
+        "hunt": 0,
+        "rob": 1767706252620
+      },
+      "stats": {
+        "total_earned": 0,
+        "crimes_committed": 0,
+        "successful_robs": 4,
+        "times_robbed": 1,
+        "fish_caught": 0,
+        "gems_mined": 0
+      },
+      "jail_until": 0,
+      "bank_capacity": 15000
+    },
+    "187686346293344@lid": {
+      "name": "sükko",
+      "wallet": 100,
+      "bank": 0,
+      "xp": 10,
+      "level": 1,
+      "health": 100,
+      "max_health": 100,
+      "inventory": {
+        "rod": 0,
+        "pickaxe": 0,
+        "sword": 0,
+        "shield": 0,
+        "potion": 0
+      },
+      "durability": {
+        "pickaxe": 0
+      },
+      "cooldowns": {
+        "daily": 1767625339139,
+        "work": 0,
+        "fish": 0,
+        "mine": 0,
+        "hunt": 0,
+        "rob": 0
+      },
+      "stats": {
+        "total_earned": 0,
+        "crimes_committed": 0,
+        "successful_robs": 0,
+        "times_robbed": 0,
+        "fish_caught": 0,
+        "gems_mined": 0
+      },
+      "jail_until": 0,
+      "bank_capacity": 10000
+    },
+    "176935942500457@lid": {
+      "name": "Great Emmy.",
+      "wallet": 0,
+      "bank": 0,
+      "xp": 40,
+      "level": 1,
+      "health": 100,
+      "max_health": 100,
+      "inventory": {
+        "rod": 0,
+        "pickaxe": 0,
+        "sword": 0,
+        "shield": 0,
+        "potion": 0
+      },
+      "durability": {
+        "pickaxe": 0
+      },
+      "cooldowns": {
+        "daily": 1767635399672,
+        "work": 1767654597129,
+        "fish": 0,
+        "mine": 0,
+        "hunt": 0,
+        "rob": 1767703323763
+      },
+      "stats": {
+        "total_earned": 0,
+        "crimes_committed": 0,
+        "successful_robs": 0,
+        "times_robbed": 4,
+        "fish_caught": 0,
+        "gems_mined": 0
+      },
+      "jail_until": 0,
+      "bank_capacity": 10000
+    },
+    "231503653015568@lid": {
+      "name": "Starry Xander",
+      "wallet": 0,
+      "bank": 294,
+      "xp": 40,
+      "level": 1,
+      "health": 100,
+      "max_health": 100,
+      "inventory": {
+        "rod": 0,
+        "pickaxe": 0,
+        "sword": 0,
+        "shield": 0,
+        "potion": 0
+      },
+      "durability": {
+        "pickaxe": 0
+      },
+      "cooldowns": {
+        "daily": 1767740305717,
+        "work": 1767703026545,
+        "fish": 0,
+        "mine": 0,
+        "hunt": 0,
+        "rob": 0
+      },
+      "stats": {
+        "total_earned": 0,
+        "crimes_committed": 0,
+        "successful_robs": 0,
+        "times_robbed": 0,
+        "fish_caught": 0,
+        "gems_mined": 0
+      },
+      "jail_until": 0,
+      "bank_capacity": 10000
+    },
+    "245749723971786@lid": {
+      "name": "ØRËX",
+      "wallet": 0,
+      "bank": 787,
+      "xp": 50,
+      "level": 2,
+      "health": 100,
+      "max_health": 100,
+      "inventory": {
+        "rod": 0,
+        "pickaxe": 0,
+        "sword": 0,
+        "shield": 0,
+        "potion": 0
+      },
+      "durability": {
+        "pickaxe": 0
+      },
+      "cooldowns": {
+        "daily": 1767737990459,
+        "work": 1767706320413,
+        "fish": 0,
+        "mine": 0,
+        "hunt": 0,
+        "rob": 1767704507086
+      },
+      "stats": {
+        "total_earned": 0,
+        "crimes_committed": 0,
+        "successful_robs": 2,
+        "times_robbed": 1,
+        "fish_caught": 0,
+        "gems_mined": 0,
+        "name_changes": 1
+      },
+      "jail_until": 1767559580402,
+      "bank_capacity": 15000
+    },
+    "146729471070270@lid": {
+      "name": "User",
+      "wallet": 0,
+      "bank": 0,
+      "xp": 0,
+      "level": 1,
+      "health": 100,
+      "max_health": 100,
+      "inventory": {
+        "rod": 0,
+        "pickaxe": 0,
+        "sword": 0,
+        "shield": 0,
+        "potion": 0
+      },
+      "durability": {
+        "pickaxe": 0
+      },
+      "cooldowns": {
+        "daily": 0,
+        "work": 0,
+        "fish": 0,
+        "mine": 0,
+        "hunt": 0,
+        "rob": 0
+      },
+      "stats": {
+        "total_earned": 0,
+        "crimes_committed": 0,
+        "successful_robs": 0,
+        "times_robbed": 0,
+        "fish_caught": 0,
+        "gems_mined": 0
+      },
+      "jail_until": 0,
+      "bank_capacity": 10000
+    },
+    "128544562745376@lid": {
+      "name": "User",
+      "wallet": 0,
+      "bank": 0,
+      "xp": 0,
+      "level": 1,
+      "health": 100,
+      "max_health": 100,
+      "inventory": {
+        "rod": 0,
+        "pickaxe": 0,
+        "sword": 0,
+        "shield": 0,
+        "potion": 0
+      },
+      "durability": {
+        "pickaxe": 0
+      },
+      "cooldowns": {
+        "daily": 0,
+        "work": 0,
+        "fish": 0,
+        "mine": 0,
+        "hunt": 0,
+        "rob": 0
+      },
+      "stats": {
+        "total_earned": 0,
+        "crimes_committed": 0,
+        "successful_robs": 0,
+        "times_robbed": 0,
+        "fish_caught": 0,
+        "gems_mined": 0
+      },
+      "jail_until": 0,
+      "bank_capacity": 10000
+    },
+    "36829931774091@lid": {
+      "name": "User",
+      "wallet": 0,
+      "bank": 492,
+      "xp": 0,
+      "level": 2,
+      "health": 100,
+      "max_health": 100,
+      "inventory": {
+        "rod": 0,
+        "pickaxe": 0,
+        "sword": 0,
+        "shield": 0,
+        "potion": 0
+      },
+      "durability": {
+        "pickaxe": 0
+      },
+      "cooldowns": {
+        "daily": 1767785373045,
+        "work": 1767702578733,
+        "fish": 0,
+        "mine": 0,
+        "hunt": 0,
+        "rob": 1767701392473
+      },
+      "stats": {
+        "total_earned": 0,
+        "crimes_committed": 0,
+        "successful_robs": 1,
+        "times_robbed": 1,
+        "fish_caught": 0,
+        "gems_mined": 0
+      },
+      "jail_until": 1767701392458,
+      "bank_capacity": 15000
+    },
+    "24636603555909@lid": {
+      "name": "User",
+      "wallet": 0,
+      "bank": 0,
+      "xp": 0,
+      "level": 1,
+      "health": 100,
+      "max_health": 100,
+      "inventory": {
+        "rod": 0,
+        "pickaxe": 0,
+        "sword": 0,
+        "shield": 0,
+        "potion": 0
+      },
+      "durability": {
+        "pickaxe": 0
+      },
+      "cooldowns": {
+        "daily": 0,
+        "work": 0,
+        "fish": 0,
+        "mine": 0,
+        "hunt": 0,
+        "rob": 0
+      },
+      "stats": {
+        "total_earned": 0,
+        "crimes_committed": 0,
+        "successful_robs": 0,
+        "times_robbed": 0,
+        "fish_caught": 0,
+        "gems_mined": 0
+      },
+      "jail_until": 0,
+      "bank_capacity": 10000
+    },
+    "73015182245941@lid": {
+      "name": "Wandering Star",
+      "wallet": 0,
+      "bank": 0,
+      "xp": 0,
+      "level": 1,
+      "health": 100,
+      "max_health": 100,
+      "inventory": {
+        "rod": 0,
+        "pickaxe": 0,
+        "sword": 0,
+        "shield": 0,
+        "potion": 0,
+        "idcard": 0
+      },
+      "durability": {
+        "pickaxe": 0
+      },
+      "cooldowns": {
+        "daily": 0,
+        "work": 0,
+        "fish": 0,
+        "mine": 0,
+        "hunt": 0,
+        "rob": 0
+      },
+      "stats": {
+        "total_earned": 0,
+        "crimes_committed": 0,
+        "successful_robs": 0,
+        "times_robbed": 0,
+        "fish_caught": 0,
+        "gems_mined": 0,
+        "name_changes": 0
+      },
+      "jail_until": 0,
+      "bank_capacity": 10000
+    },
+    "248996803133597@lid": {
+      "name": "Wandering Star",
+      "wallet": 213,
+      "bank": 0,
+      "xp": 25,
+      "level": 1,
+      "health": 100,
+      "max_health": 100,
+      "inventory": {
+        "rod": 0,
+        "pickaxe": 0,
+        "sword": 0,
+        "shield": 0,
+        "potion": 0,
+        "idcard": 0
+      },
+      "durability": {
+        "pickaxe": 0
+      },
+      "cooldowns": {
+        "daily": 1767741035350,
+        "work": 1767658240326,
+        "fish": 0,
+        "mine": 0,
+        "hunt": 0,
+        "rob": 0
+      },
+      "stats": {
+        "total_earned": 0,
+        "crimes_committed": 0,
+        "successful_robs": 0,
+        "times_robbed": 0,
+        "fish_caught": 0,
+        "gems_mined": 0,
+        "name_changes": 0
+      },
+      "jail_until": 0,
+      "bank_capacity": 10000
+    },
+    "173517198897269@lid": {
+      "name": "ßlessing💖❤️‍🩹",
+      "wallet": 0,
+      "bank": 136,
+      "xp": 45,
+      "level": 1,
+      "health": 100,
+      "max_health": 100,
+      "inventory": {
+        "rod": 0,
+        "pickaxe": 0,
+        "sword": 0,
+        "shield": 0,
+        "potion": 0,
+        "idcard": 0
+      },
+      "durability": {
+        "pickaxe": 0
+      },
+      "cooldowns": {
+        "daily": 1767785689062,
+        "work": 1767703186666,
+        "fish": 0,
+        "mine": 0,
+        "hunt": 0,
+        "rob": 1767703152873
+      },
+      "stats": {
+        "total_earned": 0,
+        "crimes_committed": 0,
+        "successful_robs": 1,
+        "times_robbed": 2,
+        "fish_caught": 0,
+        "gems_mined": 0,
+        "name_changes": 0
+      },
+      "jail_until": 0,
+      "bank_capacity": 10000
+    },
+    "183395657220250@lid": {
+      "name": "Wandering Star",
+      "wallet": 80,
+      "bank": 0,
+      "xp": 15,
+      "level": 1,
+      "health": 100,
+      "max_health": 100,
+      "inventory": {
+        "rod": 0,
+        "pickaxe": 0,
+        "sword": 0,
+        "shield": 0,
+        "potion": 0,
+        "idcard": 0
+      },
+      "durability": {
+        "pickaxe": 0
+      },
+      "cooldowns": {
+        "daily": 0,
+        "work": 1767706550909,
+        "fish": 0,
+        "mine": 0,
+        "hunt": 0,
+        "rob": 0
+      },
+      "stats": {
+        "total_earned": 0,
+        "crimes_committed": 0,
+        "successful_robs": 0,
+        "times_robbed": 0,
+        "fish_caught": 0,
+        "gems_mined": 0,
+        "name_changes": 0
+      },
+      "jail_until": 0,
+      "bank_capacity": 10000
+    },
+    "44925861265566@lid": {
+      "name": "P-H-A-N-T-O-M",
+      "wallet": 0,
+      "bank": 239,
+      "xp": 45,
+      "level": 1,
+      "health": 100,
+      "max_health": 100,
+      "inventory": {
+        "rod": 0,
+        "pickaxe": 0,
+        "sword": 0,
+        "shield": 0,
+        "potion": 0,
+        "idcard": 0
+      },
+      "durability": {
+        "pickaxe": 0
+      },
+      "cooldowns": {
+        "daily": 1767786543100,
+        "work": 1767703589296,
+        "fish": 0,
+        "mine": 0,
+        "hunt": 0,
+        "rob": 1767703569841
+      },
+      "stats": {
+        "total_earned": 0,
+        "crimes_committed": 0,
+        "successful_robs": 1,
+        "times_robbed": 0,
+        "fish_caught": 0,
+        "gems_mined": 0,
+        "name_changes": 1
+      },
+      "jail_until": 0,
+      "bank_capacity": 10000
+    }
+  },
+  "config": {
+    "daily_reward": 100,
+    "work_min": 50,
+    "work_max": 150,
+    "work_cooldown": 3600000,
+    "daily_cooldown": 86400000,
+    "fish_min": 300,
+    "fish_max": 800,
+    "fish_cooldown": 300000,
+    "mine_cooldown": 600000,
+    "hunt_cooldown": 900000,
+    "rob_cooldown": 3600000,
+    "jail_time": 1800000
+  }
+}

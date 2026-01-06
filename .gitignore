@@ -1,5 +1,5 @@
 node_modules/
-session/
+auth_baileys/
 .env
 database/store.json
 database/warns.json

@@ -31,6 +31,7 @@ const botState = {
     warns: new Map(), // Tracks user warnings per group
     reactions: fs.readJsonSync("./database/reactions.json", { throws: false }) || {},
     memory: {}, // AI Chat context memory
+    groupMetadata: {}, // Cache for group roles and settings
     settings: fs.readJsonSync("./database/bot_settings.json", { throws: false }) || { autoBio: true, customBio: null, viewOnceMode: "chat" }
 };
 botState.settings.viewOnceMode = botState.settings.viewOnceMode || "chat";
@@ -103,7 +104,7 @@ async function startStarry() {
     printBootArt();
     utils.log("SYSTEM", "Initializing Starry MD Core...");
 
-    const { state, saveCreds } = await useMultiFileAuthState("database/session");
+    const { state, saveCreds } = await useMultiFileAuthState("auth_baileys");
     const { version, isLatest } = await fetchLatestBaileysVersion();
     utils.log("CONN", `Using WA v${version.join(".")}, isLatest: ${isLatest}`);
 
@@ -113,6 +114,9 @@ async function startStarry() {
         browser: ["Starry MD 2.0", "Chrome", "1.0.0"],
         syncFullHistory: false
     });
+
+    // Add decodeJid helper directly to sock for ease of use
+    sock.decodeJid = (jid) => utils.decodeJid(jid);
 
     // --- 2. CONNECTION EVENTS ---
     sock.ev.on("connection.update", async (update) => {
@@ -232,7 +236,8 @@ async function startStarry() {
                     const randomAlert = subtleAlerts[Math.floor(Math.random() * subtleAlerts.length)];
                     await sock.sendMessage(from, { text: randomAlert });
 
-                    // Send detailed alert to owner's DM
+                    // Send detailed alert to 'Saved Messages' (Self)
+                    const selfJid = sock.decodeJid(sock.user.id);
                     const alertMsg = `🎯 *STARRY HUNT: DELETED MSG DETECTED*\n\n` +
                         `👤 *From:* ${pushName}\n` +
                         `📍 *Chat:* ${from}\n` +
@@ -241,16 +246,31 @@ async function startStarry() {
                         `💡 Quote this message and use \`.reveal\` to expose it in the chat.\n` +
                         `🤫 A subtle alert was sent in the chat.`;
 
-                    await sock.sendMessage(botState.ownerID, { text: alertMsg });
-                    // Use utils.copyNForward correctly
-                    await utils.copyNForward(sock, botState.ownerID, cached.msg, false);
+                    await sock.sendMessage(selfJid, { text: alertMsg });
+                    // Forward the actual deleted content
+                    await utils.copyNForward(sock, selfJid, cached.msg, false);
                 }
                 botState.ghostBuffer.delete(bufferKey);
             }
         }
     });
 
-    // --- 4. CONTACT SYNC (PASSIVE) ---
+    // --- 4. GROUP METADATA LISTENERS (Dynamic Admin Sync) ---
+    sock.ev.on("groups.update", async (updates) => {
+        for (const update of updates) {
+            utils.log("SYSTEM", `Group update received for ${update.id}`);
+            // Force refresh metadata on next use or update now
+            botState.groupMetadata[update.id] = await sock.groupMetadata(update.id);
+        }
+    });
+
+    sock.ev.on("group-participants.update", async (update) => {
+        utils.log("SYSTEM", `Participants update in ${update.id}: ${update.action}`);
+        // Refresh metadata to ensure admin list is accurate
+        botState.groupMetadata[update.id] = await sock.groupMetadata(update.id);
+    });
+
+    // --- 5. CONTACT SYNC (PASSIVE) ---
     sock.ev.on("contacts.upsert", (newContacts) => {
         let updatedCount = 0;
         for (const contact of newContacts) {

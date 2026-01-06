@@ -1,1 +1,9 @@
-{}
+{
+  "120363406927748328@g.us_128544562745376@lid": {
+    "grantedBy": "253781631586553@lid",
+    "grantedAt": 1767555325397,
+    "expiresAt": 1767558925397,
+    "allowedCommands": "all",
+    "usageCount": 0
+  }
+}
