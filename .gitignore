@@ -1,7 +1,15 @@
 node_modules/
 auth_baileys/
+auth_baileys_ml
+auth_baileys_xtarflex
 .env
 database/store.json
 database/warns.json
 # *.log
 *.bak.js
+1769133267084-player-script.js
+1769133267097-player-script.js
+1769196102570-player-script.js
+1769196102580-player-script.js
+1769212125404-player-script.js
+1769212125421-player-script.js

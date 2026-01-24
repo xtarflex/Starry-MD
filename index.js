@@ -14,6 +14,9 @@ const status = require("./lib/status");
 const qrcode = require("qrcode-terminal");
 const figlet = require("figlet");
 const config = require("./config");
+const economyGame = require("./lib/economy-game");
+const sessionManager = require("./lib/session-manager");
+
 
 
 // --- 1. BOOTSTRAP BOT STATE ---
@@ -32,7 +35,9 @@ const botState = {
     reactions: fs.readJsonSync("./database/reactions.json", { throws: false }) || {},
     memory: {}, // AI Chat context memory
     groupMetadata: {}, // Cache for group roles and settings
-    settings: fs.readJsonSync("./database/bot_settings.json", { throws: false }) || { autoBio: true, customBio: null, viewOnceMode: "chat" }
+    settings: fs.readJsonSync("./database/bot_settings.json", { throws: false }) || { autoBio: true, customBio: null, viewOnceMode: "chat" },
+    groupSettings: fs.readJsonSync("./database/group_settings.json", { throws: false }) || {},
+    bannedChats: fs.readJsonSync("./database/banned_chats.json", { throws: false }) || []
 };
 botState.settings.viewOnceMode = botState.settings.viewOnceMode || "chat";
 
@@ -63,11 +68,15 @@ async function updateBio(sock) {
         await sock.updateProfileStatus(bio);
         utils.log("BIO", "WhatsApp 'About' updated successfully.");
     } catch (e) {
-        utils.log("ERROR", `Failed to update bio: ${e.message}`);
+        if (e.message.includes('Connection Closed') || e.message.includes('Connection Terminated')) {
+            // Squelch network (will retry next hour)
+        } else {
+            utils.log("ERROR", `Failed to update bio: ${e.message}`);
+        }
     }
 }
 
-/**
+/* 
  * Contact Sync: Load from database + rely on passive sync
  * Note: We'll also use pushName detection in handler for immediate recognition
  */
@@ -104,16 +113,89 @@ async function startStarry() {
     printBootArt();
     utils.log("SYSTEM", "Initializing Starry MD Core...");
 
-    const { state, saveCreds } = await useMultiFileAuthState("auth_baileys");
+    // Restore Sub-Bots
+    await sessionManager.restoreSessions();
+
+    const args = process.argv.slice(2);
+
+    // Improved Argument Parser
+    let usePairingCode = false;
+    let selectedSession = null; // Default to null for standard auth_baileys
+    const knownFlags = ['--mobile', '-m', '--mn', '--session', '-s'];
+
+    // Scan args
+    for (let i = 0; i < args.length; i++) {
+        const arg = args[i];
+        if (arg === '--mn' || arg === '--mobile' || arg === '-m') {
+            usePairingCode = true;
+        } else if (arg === '--session' || arg === '-s') {
+            if (args[i + 1] && !args[i + 1].startsWith('-')) {
+                selectedSession = args[i + 1];
+                i++;
+            }
+        } else if (arg.startsWith('--session=')) {
+            selectedSession = arg.split('=')[1];
+        } else if (arg.startsWith('-s=')) {
+            selectedSession = arg.split('=')[1];
+        } else if (arg.startsWith('-')) {
+            utils.log("WARN", `Unknown argument '${arg}' ignored. To name a session, use '--session=${arg.replace(/^-+/, '')}' or just '${arg.replace(/^-+/, '')}'`);
+        }
+    }
+
+    // Determine session from naked args if not set via flags
+    if (!selectedSession) {
+        const potentialSession = args.find(a => !a.startsWith('-') && !['--mobile', '-m', '--mn'].includes(a));
+        if (potentialSession) selectedSession = potentialSession;
+    }
+
+    // Set Log File Name based on Session
+    utils.setSessionName(selectedSession);
+
+    const authPath = selectedSession ? `auth_baileys_${selectedSession}` : "auth_baileys";
+    const { state, saveCreds } = await useMultiFileAuthState(authPath);
     const { version, isLatest } = await fetchLatestBaileysVersion();
     utils.log("CONN", `Using WA v${version.join(".")}, isLatest: ${isLatest}`);
+    utils.log("CONN", `Session: ${selectedSession || "Default"} | Auth Path: ./${authPath}`);
+
+    // Readline Question Helper
+    const readline = require("readline");
+    const question = (text) => {
+        const rl = readline.createInterface({
+            input: process.stdin,
+            output: process.stdout
+        });
+        return new Promise((resolve) => {
+            rl.question(text, (answer) => {
+                rl.close();
+                resolve(answer);
+            });
+        });
+    };
 
     const sock = makeWASocket({
         version,
         auth: state,
-        browser: ["Starry MD 2.0", "Chrome", "1.0.0"],
+        printQRInTerminal: !usePairingCode, // Disable QR if using pairing code
+        browser: ["Ubuntu", "Chrome", "20.0.04"], // Standard browser for better compatibility
         syncFullHistory: false
     });
+
+    // Pairing Code Logic
+    if (usePairingCode && !sock.authState.creds.me) {
+        // Wait a tick to ensure socket init
+        setTimeout(async () => {
+            let phoneNumber = await question('Please enter your phone number (International Format, e.g., 23480123...): ');
+            phoneNumber = phoneNumber.replace(/[^0-9]/g, ''); // Sanitize
+
+            if (!phoneNumber) {
+                utils.log("ERROR", "Invalid phone number entered. Exiting.");
+                process.exit(1);
+            }
+
+            const code = await sock.requestPairingCode(phoneNumber);
+            utils.log("PAIRING", `Your Pairing Code: ${code}`);
+        }, 3000);
+    }
 
     // Add decodeJid helper directly to sock for ease of use
     sock.decodeJid = (jid) => utils.decodeJid(jid);
@@ -122,7 +204,7 @@ async function startStarry() {
     sock.ev.on("connection.update", async (update) => {
         const { connection, lastDisconnect, qr } = update;
 
-        if (qr) {
+        if (qr && !usePairingCode) {
             utils.log("CONN", "New QR Code received. Scanning window open:");
             qrcode.generate(qr, { small: true });
         }
@@ -137,8 +219,8 @@ async function startStarry() {
         } else if (connection === "open") {
             utils.log("CONN", "✅ Starry MD 2.0 Connected Successfully!");
 
-            // FIREPROOF CONTACT SYNC: Load all existing contacts first
-            await syncExistingContacts(sock);
+            // FIREPROOF CONTACT SYNC: Load all existing contacts in background
+            syncExistingContacts(sock);
 
             // Start Bio Update Loop (Every hour)
             updateBio(sock);
@@ -153,7 +235,23 @@ async function startStarry() {
 
     // --- 3. CORE MESSAGE HANDLER ---
     sock.ev.on("messages.upsert", async (m) => {
-        if (m.type !== "notify") return;
+        // Smart Filter: Allow 'notify' (standard) OR recent self-messages (owner via phone)
+        let isValid = m.type === "notify";
+
+        if (m.type === "append" && m.messages[0]) {
+            const msg = m.messages[0];
+            const isMe = msg.key.fromMe;
+            const msgTime = msg.messageTimestamp?.low || msg.messageTimestamp || 0;
+            const isRecent = (Date.now() / 1000) - msgTime < 10; // 10s window
+
+            if (isMe && isRecent) {
+                isValid = true;
+                utils.log("RECV", "Processing owner command from linked device...");
+            }
+        }
+
+        if (!isValid) return;
+
         utils.log("RECV", `Processing ${m.messages.length} incoming packet(s)...`);
 
         for (const msg of m.messages) {
@@ -186,7 +284,7 @@ async function startStarry() {
                 // Pass the individual message object instead of the whole upsert
                 await handler(msg, sock, botState);
             } catch (e) {
-                utils.log("ERROR", `Error in handler.js: ${e.message}`);
+                utils.log("ERROR", `Error in handler.js: ${e.stack}`);
             }
         }
     });
@@ -256,18 +354,53 @@ async function startStarry() {
     });
 
     // --- 4. GROUP METADATA LISTENERS (Dynamic Admin Sync) ---
+    const groupUpdateDebounce = new Map();
     sock.ev.on("groups.update", async (updates) => {
         for (const update of updates) {
             utils.log("SYSTEM", `Group update received for ${update.id}`);
-            // Force refresh metadata on next use or update now
-            botState.groupMetadata[update.id] = await sock.groupMetadata(update.id);
+
+            // Rate Limit: Only update once per 30s per group
+            const lastUpdate = groupUpdateDebounce.get(update.id) || 0;
+            const now = Date.now();
+
+            if (now - lastUpdate > 30000) {
+                try {
+                    botState.groupMetadata[update.id] = await sock.groupMetadata(update.id);
+                    groupUpdateDebounce.set(update.id, now);
+                } catch (e) {
+                    utils.log("WARN", `Failed to sync group ${update.id}: ${e.message}`);
+                }
+            }
         }
     });
 
     sock.ev.on("group-participants.update", async (update) => {
-        utils.log("SYSTEM", `Participants update in ${update.id}: ${update.action}`);
-        // Refresh metadata to ensure admin list is accurate
-        botState.groupMetadata[update.id] = await sock.groupMetadata(update.id);
+        const { id, participants, action } = update;
+        utils.log("SYSTEM", `Participants update in ${id}: ${action}`);
+
+        // Refresh metadata
+        botState.groupMetadata[id] = await sock.groupMetadata(id);
+        const metadata = botState.groupMetadata[id];
+        const settings = botState.groupSettings[id] || {};
+
+        // Handle Welcome/Goodbye
+        for (let jid of participants) {
+            jid = sock.decodeJid(jid);
+            if (!jid || typeof jid !== 'string') continue;
+
+            const user = jid.split('@')[0];
+
+            if (action === 'add' && settings.welcome) {
+                const welcomeMsg = settings.welcomeMsg || "Welcome @user to @group! 🌟";
+                const text = welcomeMsg.replace(/@user/g, `@${user}`).replace(/@group/g, metadata.subject);
+                await sock.sendMessage(id, { text, mentions: [jid] });
+            }
+            else if (action === 'remove' && settings.goodbye) {
+                const goodbyeMsg = settings.goodbyeMsg || "Goodbye @user! We'll miss you. 🚪";
+                const text = goodbyeMsg.replace(/@user/g, `@${user}`).replace(/@group/g, metadata.subject);
+                await sock.sendMessage(id, { text, mentions: [jid] });
+            }
+        }
     });
 
     // --- 5. CONTACT SYNC (PASSIVE) ---
@@ -286,6 +419,18 @@ async function startStarry() {
             utils.log("SYNC", `Passively learned ${updatedCount} new contacts.`);
         }
     });
+    // --- 6. GAME LOOP (Events) ---
+    setInterval(async () => {
+        try {
+            const diamond = await economyGame.processDiamondEvent(sock);
+            if (diamond) {
+                utils.log("EVENT", `💎 Chaos Diamond spawned at ${diamond.location}!`);
+                // Optional: Announce to specific groups if desired
+            }
+        } catch (e) {
+            utils.log("ERROR", `Diamond loop error: ${e.message}`);
+        }
+    }, 60000); // Check every minute
 }
 
 // Start the engine

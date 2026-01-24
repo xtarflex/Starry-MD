@@ -1,0 +1,18 @@
+# Update Log - 2026-01-18
+
+## Enhanced Upload System
+- **New Feature:** `.upload <filename>` allows custom naming for uploads.
+- **New Feature:** `.uploads` (or `.listuploads`) lists all uploaded files with indices.
+- **New Feature:** `.getupload <number|name>` retrieves specific uploaded files.
+- **Safety:** Added overwrite protection and fallbacks for naming.
+
+# Update Log - 2026-01-16
+
+## Implemented Human-Readable Number Parsing
+- **New Feature:** Added support for `k` (thousand), `m` (million), `b` (billion), `t` (trillion) suffixes in commands.
+- **Affected Commands:**
+  - **Economy:** `.deposit`, `.withdraw`, `.loan`, `.gift`
+  - **Games:** `.gamble`, `.coinflip`, `.duel`, `.blackjack`, `.roulette`, `.ttt`
+  - **Admin:** `.treasury`, `.giveaway`
+- **Implementation:** Added `parseNumber` utility in `lib/utils.js` and updated relevant handlers.
+- **Status:** Verified working with new regex support for suffixes.
