@@ -1,0 +1,59 @@
+﻿node : C:\StarryMD\lib
+\systems\economy.js:45
+1
+At line:1 char:1
++ node index.js -c 2> 
+latest_error_4.txt
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (C:\StarryM   
+ D\lib\systems\eco    
+nomy.js:451:Strin    
+g) [], RemoteExce    
+ption
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+
+
+
+SyntaxError: 
+Unexpected end of 
+input
+    at wrapSafe (node:
+internal/modules/cjs/l
+oader:1692:18)
+    at 
+Module._compile (node:
+internal/modules/cjs/l
+oader:1735:20)
+    at Object..js (nod
+e:internal/modules/cjs
+/loader:1893:10)
+    at Module.load (no
+de:internal/modules/cj
+s/loader:1481:32)
+    at Module._load (n
+ode:internal/modules/c
+js/loader:1300:12)
+    at TracingChannel.
+traceSync (node:diagno
+stics_channel:328:14)
+    at wrapModuleLoad 
+(node:internal/modules
+/cjs/loader:245:24)
+    at Module.require 
+(node:internal/modules
+/cjs/loader:1504:12)
+    at require (node:i
+nternal/modules/helper
+s:152:16)
+    at 
+Object.<anonymous> (C:
+\StarryMD\lib\core\han
+dler.js:10:17)
+
+Node.js v24.11.1

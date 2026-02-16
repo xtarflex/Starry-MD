@@ -125,3 +125,7 @@ Always works:
 ## 🚀 **Ready to Integrate!**
 
 All code is written and tested. Just needs to be connected in handler.js.
+
+## 📚 **Global Knowledge Base**
+- **Baileys Docs:** [baileys_docs.md](.agent/knowledge/baileys_docs.md) - Comprehensive API reference and best practices.
+

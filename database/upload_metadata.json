@@ -1,0 +1,131 @@
+{
+  "uploads": {
+    "file_84yjux.jpg": {
+      "id": "84yjux",
+      "filename": "file_84yjux.jpg",
+      "uploader": "146729471070270@lid",
+      "password": null,
+      "originalName": "20260123_203629.jpg",
+      "timestamp": 1769396894536,
+      "folder": "Daniel",
+      "size": 1440574
+    },
+    "file_gpe3wh.pdf": {
+      "id": "gpe3wh",
+      "filename": "file_gpe3wh.pdf",
+      "uploader": "146729471070270@lid",
+      "password": null,
+      "originalName": "GST101 PAST QUESTIONS (1).pdf",
+      "timestamp": 1769397616858,
+      "folder": "Education",
+      "size": 545362
+    },
+    "file_84pjux.pdf": {
+      "id": "84pjux",
+      "filename": "file_84pjux.pdf",
+      "uploader": "146729471070270@lid",
+      "password": null,
+      "originalName": "course reg.pdf",
+      "timestamp": 1769396894536,
+      "folder": "Education",
+      "size": 1440574
+    },
+    "file_13b8zc.pdf": {
+      "id": "13b8zc",
+      "filename": "file_13b8zc.pdf",
+      "uploader": "253781631586553@lid",
+      "password": null,
+      "originalName": "Introduction-to-Mechatronics-MCE-101.pdf",
+      "timestamp": 1769424559425,
+      "folder": "root",
+      "size": 18269821
+    },
+    "file_2s7169.jpg": {
+      "id": "2s7169",
+      "filename": "file_2s7169.jpg",
+      "uploader": "253781631586553@lid",
+      "password": null,
+      "originalName": "file_2s7169.jpg",
+      "timestamp": 1769627057884,
+      "folder": "Daniel",
+      "size": 45092
+    },
+    "file_r3a4x0.mp4": {
+      "id": "r3a4x0",
+      "filename": "file_r3a4x0.mp4",
+      "uploader": "253781631586553@lid",
+      "password": "1234",
+      "originalName": "file_r3a4x0.mp4",
+      "timestamp": 1769628246684,
+      "folder": "tv-files",
+      "size": 6162792
+    },
+    "file_cdvzm5.txt": {
+      "id": "cdvzm5",
+      "filename": "file_cdvzm5.txt",
+      "uploader": "253781631586553@lid",
+      "password": null,
+      "originalName": "The starry HUB  Edu _260104_114213.txt",
+      "timestamp": 1769687230796,
+      "folder": "branding",
+      "size": 4153
+    },
+    "file_7mbp4f.txt": {
+      "id": "7mbp4f",
+      "filename": "file_7mbp4f.txt",
+      "uploader": "253781631586553@lid",
+      "password": null,
+      "originalName": "STARRY STUDIO  art , music, passion_251022_165804.txt",
+      "timestamp": 1769687304978,
+      "folder": "branding",
+      "size": 2635
+    },
+    "file_zahu99.txt": {
+      "id": "zahu99",
+      "filename": "file_zahu99.txt",
+      "uploader": "253781631586553@lid",
+      "password": null,
+      "originalName": "Media documentation cont'd _251022_154259.txt",
+      "timestamp": 1769687314296,
+      "folder": "branding",
+      "size": 1757
+    },
+    "file_gihkq4.txt": {
+      "id": "gihkq4",
+      "filename": "file_gihkq4.txt",
+      "uploader": "253781631586553@lid",
+      "password": null,
+      "originalName": "the Starry HUB(tagline)_260104_112150.txt",
+      "timestamp": 1769687332804,
+      "folder": "branding",
+      "size": 6902
+    },
+    "file_huztle.mp4": {
+      "id": "huztle",
+      "filename": "file_huztle.mp4",
+      "uploader": "253781631586553@lid",
+      "password": null,
+      "originalName": "huztle muzt pay.mp4",
+      "timestamp": 1770057426000,
+      "folder": "root",
+      "size": 53050785
+    },
+    "file_nkbwq5.docx": {
+      "id": "nkbwq5",
+      "filename": "file_nkbwq5.docx",
+      "uploader": "40682433572911@lid",
+      "password": null,
+      "originalName": "ICE 101 ASSIGNMENT.docx",
+      "timestamp": 1770220937165,
+      "folder": "root",
+      "size": 13326
+    }
+  },
+  "folders": [
+    "root",
+    "Daniel",
+    "Education",
+    "tv-files",
+    "branding"
+  ]
+}

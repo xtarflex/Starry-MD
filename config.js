@@ -1,9 +1,9 @@
-require('dotenv').config();
+import 'dotenv/config';
 
 /* 
  * Starry MD Configuration
  */
-module.exports = {
+const config = {
     // Owner Details
     OWNER_ID: process.env.OWNER_ID || "2348141680626", // Your WhatsApp ID without + (comma separate for multiple)
     OWNER_NAME: "Starry",
@@ -71,3 +71,5 @@ module.exports = {
     STATUS_BUFFER_MIN: 5000,   // Minimum 5s delay between actions
     STATUS_BUFFER_MAX: 15000   // Maximum 15s delay between actions
 };
+
+export default config;

@@ -1,0 +1,229 @@
+{
+  "routes": {},
+  "categories": {
+    "community_nexus": {
+      "name": "Starry Nexus (Community)",
+      "allowedGroups": [
+        "PLACEHOLDER_NEXUS_JID"
+      ],
+      "inviteLink": "",
+      "description": "The main community hub. No spam bots allowed.",
+      "commands": [
+        "rules",
+        "list",
+        "profile",
+        "leaderboard",
+        "group",
+        "admins",
+        "ping",
+        "alive",
+        "runtime",
+        "sys"
+      ]
+    },
+    "support_desk": {
+      "name": "Starry Support",
+      "allowedGroups": [
+        "PLACEHOLDER_SUPPORT_JID"
+      ],
+      "inviteLink": "",
+      "description": "Help, bugs, and feedback.",
+      "commands": [
+        "suggest",
+        "bug",
+        "report",
+        "faq",
+        "contact",
+        "help"
+      ]
+    },
+    "ai_lab": {
+      "name": "The Lab (AI & Tools)",
+      "allowedGroups": [
+        "120363424598967365@g.us"
+      ],
+      "inviteLink": "https://chat.whatsapp.com/HPPPFUua5XiE1IUEXHo8Ps",
+      "description": "Chat with AI personas, use tools, and search.",
+      "commands": [
+        "ai",
+        "gpt",
+        "imagine",
+        "draw",
+        "vision",
+        "advisor",
+        "yuki",
+        "fizz",
+        "jax",
+        "ren",
+        "bella",
+        "tech",
+        "uwu",
+        "mom",
+        "pirate",
+        "human",
+        "normal",
+        "lyrics",
+        "wiki",
+        "define",
+        "google",
+        "shorten",
+        "translate",
+        "weather"
+      ]
+    },
+    "media_forge": {
+      "name": "The Forge (Media)",
+      "allowedGroups": [
+        "120363424392381035@g.us"
+      ],
+      "inviteLink": "https://chat.whatsapp.com/CKWF2KpCF3OCthcwhiLZ5q",
+      "description": "Create stickers, convert media, and meme generation.",
+      "commands": [
+        "sticker",
+        "s",
+        "toimg",
+        "tovideo",
+        "mp4",
+        "ssteal",
+        "steal",
+        "doge",
+        "cat",
+        "meme",
+        "wasted",
+        "tourl",
+        "upload",
+        "vv",
+        "testalbum",
+        "play",
+        "yts",
+        "song",
+        "video",
+        "ytv",
+        "tomp3",
+        "mp3",
+        "tovn",
+        "fast",
+        "slow",
+        "speed",
+        "bass",
+        "deep",
+        "high",
+        "nightcore",
+        "reverse",
+        "blown",
+        "earrape",
+        "echo",
+        "tremolo",
+        "tt",
+        "tiktok",
+        "ig",
+        "insta",
+        "instagram",
+        "pint",
+        "pinterest"
+      ]
+    },
+    "rpg_frontier": {
+      "name": "The Frontier (RPG)",
+      "allowedGroups": [
+        "120363423775743301@g.us",
+        "120363423737042736@g.us"
+      ],
+      "inviteLink": "https://chat.whatsapp.com/GNw8l9oNrZII7auvUb2lB9",
+      "description": "Mining, hunting, fishing, and working.",
+      "commands": [
+        "work",
+        "fish",
+        "mine",
+        "dig",
+        "hunt",
+        "heal",
+        "chop",
+        "dungeon",
+        "inventory",
+        "inv",
+        "buy",
+        "sell",
+        "shop",
+        "tasks",
+        "claim",
+        "gift",
+        "rob",
+        "spawn"
+      ]
+    },
+    "gambling_casino": {
+      "name": "The Casino",
+      "allowedGroups": [
+        "120363423669487608@g.us"
+      ],
+      "inviteLink": "https://chat.whatsapp.com/FfxPFWn1MvvE8QfIH5KUWN",
+      "description": "High-stakes gambling and games.",
+      "commands": [
+        "gamble",
+        "slot",
+        "coinflip",
+        "bet",
+        "ttt",
+        "roulette",
+        "blackjack",
+        "bj",
+        "8ball",
+        "truth",
+        "dare",
+        "ship",
+        "match",
+        "gaycheck"
+      ]
+    },
+    "finance_exchange": {
+      "name": "The Exchange (Finance)",
+      "allowedGroups": [
+        "120363425431839501@g.us"
+      ],
+      "inviteLink": "https://chat.whatsapp.com/HgPUKsDeLbJ9BlpTuuBIln",
+      "description": "Stocks, crypto, and banking.",
+      "commands": [
+        "crypto",
+        "forex",
+        "stock",
+        "buystock",
+        "sellstock",
+        "buycrypto",
+        "sellcrypto",
+        "buyfx",
+        "sellfx",
+        "convert",
+        "transfer",
+        "pay",
+        "leaderboard",
+        "lb",
+        "rich",
+        "census",
+        "profile",
+        "titles",
+        "equip",
+        "balance",
+        "bal",
+        "deposit",
+        "withdraw",
+        "loan",
+        "bank"
+      ]
+    },
+    "restricted_void": {
+      "name": "Starry Void",
+      "allowedGroups": [
+        "PLACEHOLDER_VOID_JID"
+      ],
+      "inviteLink": "",
+      "description": "Restricted and NSFW commands.",
+      "commands": [
+        "nsfw",
+        "scrape",
+        "roast",
+        "insult"
+      ]
+    }
+  }
+}

@@ -1,0 +1,3271 @@
+{
+  "users": {
+    "253781631586553@lid": {
+      "jid": "253781631586553@lid",
+      "name": "Starry Xander",
+      "bio": "i no b ur papa, no more giveaway... go hustle",
+      "role": "Thief",
+      "title": "The Novice",
+      "location": "Cyber City",
+      "financials": {
+        "wallet": 0,
+        "bank": 0,
+        "debt": 352000,
+        "bank_capacity": 100000000000,
+        "total_earned": 720
+      },
+      "assets": {
+        "property": "prop_moon_base",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 1,
+        "id_citizen": 1,
+        "prop_penthouse": 0,
+        "rocket": 1,
+        "void_drive": 1,
+        "chaos_diamond": 586,
+        "time_orb": 64,
+        "prop_estate": 0,
+        "drone": 1,
+        "starship": 1,
+        "shield": 1,
+        "shadow_cloak": 10,
+        "license_thief": 1,
+        "rod": 1,
+        "pickaxe": 1,
+        "sword": 1,
+        "idcard": 1,
+        "exp_scroll": 901,
+        "energy_drink": 50,
+        "potion": 99,
+        "prop_moon_base": 0,
+        "pfp_male_5": 1,
+        "pfp_male_4": 1,
+        "rifle": 1,
+        "id_thief": 0,
+        "prop_private_island": 1,
+        "dyson_blueprint": 2
+      },
+      "stats": {
+        "level": 33,
+        "xp": 17896,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658560259,
+        "travel_count": 101,
+        "respect": 853513403017,
+        "realized_gains": 1491362751235097600,
+        "gems_mined": 1,
+        "fish_caught": 1
+      },
+      "cooldowns": {
+        "work": 1769388790312,
+        "rob": 1770403346403,
+        "loan_due": 0,
+        "daily": 1769428392709,
+        "steal_diamond": 1769548121379,
+        "rob_immunity": 1768700540345,
+        "escape": 1768693676380,
+        "mine": 1768698756764,
+        "fish": 1768709519014
+      },
+      "durability": {
+        "pickaxe": 49
+      },
+      "jail_until": 0,
+      "tasks": {
+        "progress": {
+          "d_gamble_5": 2,
+          "w_mine_20": 1,
+          "d_fish_5": 0
+        },
+        "completed": [],
+        "last_daily_reset": 1769547667633
+      },
+      "portfolio": {
+        "crypto": {
+          "XRP": {
+            "quantity": 2670808821441533000,
+            "average_buy_price": 0.6599043091764543,
+            "total_invested": 1762478250255754800
+          },
+          "BTC": {
+            "quantity": 34465399621.859985,
+            "average_buy_price": 65680.68721624967,
+            "total_invested": 2263711132346435.5
+          }
+        },
+        "stocks": {
+          "VOID": {
+            "quantity": 10000000000000,
+            "average_buy_price": 341.5830037250984,
+            "total_invested": 3415830037250984
+          },
+          "NVDA": {
+            "quantity": 1000000000000,
+            "average_buy_price": 1001.035288052542,
+            "total_invested": 1001035288052542
+          },
+          "TSLA": {
+            "quantity": 2000000000000,
+            "average_buy_price": 235.86522424814376,
+            "total_invested": 471730448496287.5
+          }
+        },
+        "forex": {}
+      },
+      "health": 100,
+      "titles": [
+        "The Novice"
+      ],
+      "equipped_pfp": "pfp_male_5"
+    },
+    "176935942500457@lid": {
+      "jid": "176935942500457@lid",
+      "name": "Elon Musk",
+      "bio": "Great Emmy...",
+      "role": "Thief",
+      "title": "The Novice",
+      "location": "Cyber City",
+      "financials": {
+        "wallet": 699498933653503700000,
+        "bank": 100000000000,
+        "debt": 5000000,
+        "bank_capacity": 100000000000,
+        "total_earned": 10
+      },
+      "assets": {
+        "property": "prop_moon_base",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 1,
+        "id_citizen": 1,
+        "rod": 1,
+        "shield": 1,
+        "prop_penthouse": 1,
+        "prop_estate": 0,
+        "starship": 1,
+        "rocket": 1,
+        "handcuffs": 2,
+        "id_thief": 0,
+        "time_orb": 85,
+        "rifle": 1,
+        "license_thief": 1,
+        "drone": 1,
+        "cyber_bike": 1,
+        "pistol": 1,
+        "chaos_diamond": 5740,
+        "shadow_cloak": 1000,
+        "id_police": 0,
+        "badge_police": 1,
+        "exp_scroll": 1051,
+        "prop_moon_base": 0,
+        "premium_title": 1,
+        "pfp_male_5": 2,
+        "pfp_male_4": 1,
+        "dyson_blueprint": 119,
+        "jail_card": 1
+      },
+      "stats": {
+        "level": 25,
+        "xp": 15360,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1769868164861,
+        "fish_caught": 1,
+        "travel_count": 37,
+        "respect": 8100201007,
+        "realized_gains": 699505531540131800000
+      },
+      "cooldowns": {
+        "work": 1768725004087,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 1769421952426,
+        "fish": 1768658940967,
+        "steal_diamond": 1769434594682,
+        "arrest": 1768667292109,
+        "rob_immunity": 1769553347241,
+        "escape": 1768728328483
+      },
+      "durability": {},
+      "jail_until": 0,
+      "tasks": {
+        "progress": {
+          "d_fish_5": 0,
+          "d_gamble_5": 42
+        },
+        "completed": [],
+        "last_daily_reset": 1769815908295
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {},
+        "forex": {}
+      },
+      "equipped_pfp": "pfp_male_5"
+    },
+    "245749723971786@lid": {
+      "jid": "245749723971786@lid",
+      "name": "OREX",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Thief",
+      "title": "The Novice",
+      "location": "Cyber City",
+      "financials": {
+        "wallet": 0,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 1000000
+      },
+      "assets": {
+        "property": "prop_mansion",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1,
+        "rocket": 1,
+        "void_drive": 1,
+        "rifle": 1,
+        "starship": 1,
+        "drone": 1,
+        "id_thief": 0,
+        "prop_mansion": 0,
+        "license_thief": 1,
+        "time_orb": 9,
+        "prop_estate": 1,
+        "shadow_cloak": 0,
+        "energy_drink": 0
+      },
+      "stats": {
+        "level": 1,
+        "xp": 455,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658568111,
+        "travel_count": 16,
+        "realized_gains": 101368133192.0931
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 1768682851034,
+        "loan_due": 0,
+        "daily": 1768770497471,
+        "steal_diamond": 1768663368822,
+        "rob_immunity": 1768730389717
+      },
+      "durability": {},
+      "jail_until": 0,
+      "tasks": {
+        "progress": {
+          "d_gamble_5": 1
+        },
+        "completed": [],
+        "last_daily_reset": 1768728067017
+      },
+      "portfolio": {
+        "crypto": {
+          "ETH": {
+            "quantity": 14004.991692425792,
+            "average_buy_price": 3706.008502296321,
+            "total_invested": 51902618.28671932
+          },
+          "XRP": {
+            "quantity": 1149677415691.2078,
+            "average_buy_price": 0.7132969551235119,
+            "total_invested": 820061399986.8065
+          }
+        },
+        "stocks": {}
+      }
+    },
+    "227697959686300@lid": {
+      "jid": "227697959686300@lid",
+      "name": "Asta",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Mars",
+      "financials": {
+        "wallet": 701375546.9208984,
+        "bank": 1004018000,
+        "debt": 0,
+        "bank_capacity": 1000000000
+      },
+      "assets": {
+        "property": "prop_estate",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 1,
+        "id_citizen": 1,
+        "shield": 1,
+        "prop_penthouse": 1,
+        "prop_estate": 1,
+        "starship": 1,
+        "time_orb": 0,
+        "shadow_cloak": 0,
+        "id_police": 1,
+        "id_thief": 1,
+        "handcuffs": 0,
+        "rocket": 1,
+        "chaos_diamond": 6
+      },
+      "stats": {
+        "level": 1,
+        "xp": 400,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1769263369628,
+        "travel_count": 3,
+        "realized_gains": 903139425676.559
+      },
+      "cooldowns": {
+        "work": 1768690541503,
+        "rob": 1768707255213,
+        "loan_due": 0,
+        "daily": 1768701953264,
+        "steal_diamond": 1768704169170,
+        "rob_immunity": 1768707271370,
+        "arrest": 1768685025334
+      },
+      "durability": {},
+      "jail_until": 1768689224444,
+      "tasks": {
+        "progress": {
+          "d_gamble_5": 3
+        },
+        "completed": [],
+        "last_daily_reset": 1769816569542
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "12649215590578@lid": {
+      "jid": "12649215590578@lid",
+      "name": "M E R L I N",
+      "bio": "LONG LOST BOY. 🧙",
+      "role": "Thief",
+      "title": "The Novice",
+      "location": "Mars",
+      "financials": {
+        "wallet": 0,
+        "bank": 18930799628.730568,
+        "debt": 0,
+        "bank_capacity": 100000000000
+      },
+      "assets": {
+        "property": "prop_moon_base",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 1,
+        "id_citizen": 1,
+        "prop_estate": 0,
+        "rod": 1,
+        "starship": 1,
+        "rocket": 1,
+        "void_drive": 1,
+        "shield": 1,
+        "shadow_cloak": 0,
+        "time_orb": 52,
+        "chaos_diamond": 15,
+        "drone": 1,
+        "id_police": 1,
+        "id_thief": 0,
+        "exp_scroll": 881,
+        "rifle": 1,
+        "handcuffs": 19,
+        "prop_moon_base": 0
+      },
+      "stats": {
+        "level": 9,
+        "xp": 984,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658579085,
+        "travel_count": 228,
+        "respect": 823006,
+        "realized_gains": 19266245919.730568
+      },
+      "cooldowns": {
+        "work": 1768732168840,
+        "rob": 1768732570449,
+        "loan_due": 0,
+        "daily": 0,
+        "rob_immunity": 1768698072379,
+        "steal_diamond": 1768698964234,
+        "arrest": 1768695768955
+      },
+      "durability": {},
+      "jail_until": 0,
+      "tasks": {
+        "progress": {
+          "d_gamble_5": 11
+        },
+        "completed": [],
+        "last_daily_reset": 1768668914796
+      },
+      "portfolio": {
+        "crypto": {
+          "XRP": {
+            "quantity": 6588251406212506,
+            "average_buy_price": 0.5593016806578361,
+            "total_invested": 3684820084091007
+          },
+          "STR": {
+            "quantity": 1940221499071989,
+            "average_buy_price": 0.8643389355261206,
+            "total_invested": 1677008985192777
+          }
+        },
+        "stocks": {}
+      }
+    },
+    "84882126586007@lid": {
+      "jid": "84882126586007@lid",
+      "name": "Yami",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Thief",
+      "title": "The Novice",
+      "location": "Mars",
+      "financials": {
+        "wallet": 0,
+        "bank": 0,
+        "debt": 500000,
+        "bank_capacity": 1000000000,
+        "total_earned": 735
+      },
+      "assets": {
+        "property": "prop_estate",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 1,
+        "id_citizen": 1,
+        "shield": 1,
+        "prop_penthouse": 0,
+        "id_thief": 0,
+        "prop_estate": 0,
+        "rocket": 1,
+        "pickaxe": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 525,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1769263385560,
+        "travel_count": 1,
+        "gems_mined": 2,
+        "realized_gains": -7135061.69990639
+      },
+      "cooldowns": {
+        "work": 1768686343621,
+        "rob": 1769392471161,
+        "loan_due": 0,
+        "daily": 0,
+        "mine": 1768685119498
+      },
+      "durability": {
+        "pickaxe": 48
+      },
+      "jail_until": 0,
+      "tasks": {
+        "progress": {
+          "d_gamble_5": 8,
+          "w_mine_20": 2
+        },
+        "completed": [],
+        "last_daily_reset": 1768665307635
+      },
+      "portfolio": {
+        "crypto": {
+          "BTC": {
+            "quantity": 2.0006345677623263,
+            "average_buy_price": 64880.38245376266,
+            "total_invested": 129801.93590663787
+          },
+          "XRP": {
+            "quantity": 339063057.23213416,
+            "average_buy_price": 0.5043305093751769,
+            "total_invested": 170999844.36418697
+          }
+        },
+        "stocks": {}
+      }
+    },
+    "house_treasury": {
+      "jid": "house_treasury",
+      "name": "🏛️ Central Bank",
+      "role": "System",
+      "location": "Cyber City",
+      "financials": {
+        "wallet": 0,
+        "bank": 29710693504316610000,
+        "debt": 0,
+        "bank_capacity": 999999999
+      },
+      "assets": {
+        "property": "prop_estate",
+        "vehicle": "rocket",
+        "staff": []
+      },
+      "inventory": {},
+      "stats": {
+        "level": 999,
+        "xp": 0
+      },
+      "durability": {},
+      "cooldowns": {}
+    },
+    "23386768031904@lid": {
+      "jid": "23386768031904@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 6044738976,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1,
+        "shadow_cloak": 0
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763696,
+        "respect": 280798100909
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0,
+        "rob_immunity": 1768726125576
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "11033972322355@lid": {
+      "jid": "11033972322355@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 50001000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763700
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "173517198897269@lid": {
+      "jid": "173517198897269@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 150736802,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1,
+        "shield": 1,
+        "pickaxe": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 150,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763704
+      },
+      "cooldowns": {
+        "work": 1768688296900,
+        "rob": 1768681016014,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {
+        "pickaxe": 50
+      },
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "tasks": {
+        "progress": {
+          "d_gamble_5": 1
+        },
+        "completed": [],
+        "last_daily_reset": 1768684919780
+      }
+    },
+    "219486401638419@lid": {
+      "jid": "219486401638419@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 50002000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763708
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "109775622803483@lid": {
+      "jid": "109775622803483@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Cyber City",
+      "financials": {
+        "wallet": 70439,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1,
+        "shield": 1,
+        "time_orb": 0,
+        "starship": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763712,
+        "travel_count": 1
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 1768684959202,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "tasks": {
+        "progress": {
+          "d_gamble_5": 3
+        },
+        "completed": [],
+        "last_daily_reset": 1768670412022
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "207387495514246@lid": {
+      "jid": "207387495514246@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 50001000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763716
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "40038322671697@lid": {
+      "jid": "40038322671697@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 92445024,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763719
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "43276409278525@lid": {
+      "jid": "43276409278525@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 151002000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763724
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "108323789647996@lid": {
+      "jid": "108323789647996@lid",
+      "name": "tosin",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Mars",
+      "financials": {
+        "wallet": 0,
+        "bank": 808367397.0593262,
+        "debt": 0,
+        "bank_capacity": 1000000000
+      },
+      "assets": {
+        "property": "prop_estate",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 1,
+        "id_citizen": 1,
+        "shield": 1,
+        "rocket": 1,
+        "idcard": 0,
+        "prop_estate": 1,
+        "starship": 1,
+        "license_thief": 1,
+        "shadow_cloak": 1,
+        "time_orb": 5,
+        "handcuffs": 4,
+        "prop_mansion": 1,
+        "exp_scroll": 9,
+        "chaos_diamond": 7,
+        "rod": 1,
+        "pfp_female_3": 1,
+        "void_drive": 1
+      },
+      "stats": {
+        "level": 2,
+        "xp": 1800,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1769263563729,
+        "travel_count": 31,
+        "respect": 103542,
+        "realized_gains": 5508550.169511331
+      },
+      "cooldowns": {
+        "work": 1768730115576,
+        "rob": 1768730085876,
+        "loan_due": 0,
+        "daily": 1768711391660,
+        "arrest": 1768719370341,
+        "steal_diamond": 1769385419764
+      },
+      "durability": {},
+      "jail_until": 0,
+      "tasks": {
+        "progress": {
+          "d_gamble_5": 2
+        },
+        "completed": [],
+        "last_daily_reset": 1770080735205
+      },
+      "portfolio": {
+        "crypto": {
+          "BTC": {
+            "quantity": 10,
+            "average_buy_price": 71226.21101396135,
+            "total_invested": 712262.1101396135
+          }
+        },
+        "stocks": {}
+      }
+    },
+    "192621213384772@lid": {
+      "jid": "192621213384772@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 58667684,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763733
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "tasks": {
+        "progress": {
+          "d_gamble_5": 6
+        },
+        "completed": [],
+        "last_daily_reset": 1768667317688
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "81737975635983@lid": {
+      "jid": "81737975635983@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 51002010,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763737
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "180664125120549@lid": {
+      "jid": "180664125120549@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 50002010,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763741
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "73015182245941@lid": {
+      "jid": "73015182245941@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 89679512,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763744
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "77567847587878@lid": {
+      "jid": "77567847587878@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "The Void",
+      "financials": {
+        "wallet": 32834085,
+        "bank": 364690,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1,
+        "shield": 1,
+        "idcard": 2,
+        "rocket": 1,
+        "shadow_cloak": 0,
+        "badge_police": 1,
+        "drone": 1,
+        "void_drive": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 250,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763749,
+        "travel_count": 1
+      },
+      "cooldowns": {
+        "work": 1768667642326,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 1768706925190,
+        "rob_immunity": 1768723207132
+      },
+      "durability": {},
+      "jail_until": 0,
+      "tasks": {
+        "progress": {
+          "d_gamble_5": 5
+        },
+        "completed": [],
+        "last_daily_reset": 1768663131672
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {},
+        "forex": {}
+      }
+    },
+    "32156957077718@lid": {
+      "jid": "32156957077718@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 150001010,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763755
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "231503653015568@lid": {
+      "jid": "231503653015568@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1027170883,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763758
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "126650465415369@lid": {
+      "jid": "126650465415369@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 150002010,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763762
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "277043224797370@lid": {
+      "jid": "277043224797370@lid",
+      "name": "Lisa",
+      "bio": "most pretty 🤩🤩😍",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1280936296921,
+        "bank": 500000000,
+        "debt": 0,
+        "bank_capacity": 500000000
+      },
+      "assets": {
+        "property": "prop_estate",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1,
+        "shield": 1,
+        "shadow_cloak": 2,
+        "id_police": 1,
+        "prop_estate": 0,
+        "exp_scroll": 0,
+        "handcuffs": 3,
+        "time_orb": 1,
+        "id_thief": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 815,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763766,
+        "respect": 2407
+      },
+      "cooldowns": {
+        "work": 1768730404800,
+        "rob": 1768729929638,
+        "loan_due": 0,
+        "daily": 1768711456341,
+        "rob_immunity": 1768731267938,
+        "arrest": 1768728571616
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "tasks": {
+        "progress": {
+          "d_gamble_5": 37
+        },
+        "completed": [],
+        "last_daily_reset": 1768696594925
+      }
+    },
+    "233676872921173@lid": {
+      "jid": "233676872921173@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 25138825,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763770
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "82751554334846@lid": {
+      "jid": "82751554334846@lid",
+      "name": "Dunke",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 175563286,
+        "bank": 500,
+        "debt": 0,
+        "bank_capacity": 500,
+        "total_earned": 285
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1,
+        "rod": 1,
+        "shadow_cloak": 0,
+        "handcuffs": 2,
+        "pickaxe": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 425,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763773,
+        "fish_caught": 1
+      },
+      "cooldowns": {
+        "work": 1768700206501,
+        "rob": 1768700074673,
+        "loan_due": 0,
+        "daily": 1768734500805,
+        "fish": 1768697660577,
+        "rob_immunity": 1768701016011,
+        "arrest": 1768698453815
+      },
+      "durability": {
+        "pickaxe": 50
+      },
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "tasks": {
+        "progress": {
+          "d_fish_5": 1
+        },
+        "completed": [],
+        "last_daily_reset": 1768697360580
+      }
+    },
+    "115535022977209@lid": {
+      "jid": "115535022977209@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 102855626,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763778
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "233672544407769@lid": {
+      "jid": "233672544407769@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 37020756,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763783
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "208984837480684@lid": {
+      "jid": "208984837480684@lid",
+      "name": "beshi",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 660,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500,
+        "total_earned": 10
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1,
+        "rod": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 25,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1769263563789,
+        "fish_caught": 1
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0,
+        "fish": 1769384262462
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "tasks": {
+        "progress": {
+          "d_fish_5": 1
+        },
+        "completed": [],
+        "last_daily_reset": 1769383962467
+      }
+    },
+    "36829931774091@lid": {
+      "jid": "36829931774091@lid",
+      "name": "Bethy",
+      "bio": "Angel",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Mars",
+      "financials": {
+        "wallet": 0,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500000000
+      },
+      "assets": {
+        "property": "prop_estate",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 1,
+        "id_citizen": 1,
+        "shadow_cloak": 0,
+        "rocket": 1,
+        "starship": 1,
+        "handcuffs": 1,
+        "prop_mansion": 0,
+        "chaos_diamond": 4,
+        "potion": 1,
+        "idcard": 0,
+        "time_orb": 0,
+        "prop_estate": 0,
+        "prop_moon_base": 1,
+        "shield": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658763792,
+        "travel_count": 22,
+        "respect": 2002
+      },
+      "cooldowns": {
+        "work": 1768664135757,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 1768703745109,
+        "rob_immunity": 1768728241226,
+        "steal_diamond": 1768699015654,
+        "arrest": 1768698772880
+      },
+      "durability": {},
+      "jail_until": 0,
+      "tasks": {
+        "progress": {
+          "d_gamble_5": 5
+        },
+        "completed": [],
+        "last_daily_reset": 1768703791747
+      },
+      "portfolio": {
+        "crypto": {
+          "BTC": {
+            "quantity": 15288730.637825124,
+            "average_buy_price": 65675.35024790232,
+            "total_invested": 1004092739485
+          }
+        },
+        "stocks": {}
+      }
+    },
+    "159872037478506@lid": {
+      "jid": "159872037478506@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 0,
+        "bank": 23165225.06334567,
+        "debt": 0,
+        "bank_capacity": 500000000
+      },
+      "assets": {
+        "property": "prop_estate",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 1,
+        "id_citizen": 1,
+        "prop_estate": 0,
+        "rocket": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768658848794,
+        "respect": 110002,
+        "realized_gains": 197405404.62448335
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 1768697398526,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {
+          "TECH": {
+            "quantity": 4000000,
+            "average_buy_price": 121.47148839028442,
+            "total_invested": 485885953.5611377
+          }
+        }
+      }
+    },
+    "2348067498145@s.whatsapp.net": {
+      "jid": "2348067498145@s.whatsapp.net",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768659552543
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "181840946155525@lid": {
+      "jid": "181840946155525@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1001000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768660019515
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "201391754747936@lid": {
+      "jid": "201391754747936@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1002000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768660019522
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "66868865986762@lid": {
+      "jid": "66868865986762@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 100001000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768660556197
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "248996803133597@lid": {
+      "jid": "248996803133597@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 63795428,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768660556207
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "109839661437042@lid": {
+      "jid": "109839661437042@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 100001000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768660556211
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "223145646665841@lid": {
+      "jid": "223145646665841@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 63101356,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768660556218
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "281381125021839@lid": {
+      "jid": "281381125021839@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 100001000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768660556223
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "128544562745376@lid": {
+      "jid": "128544562745376@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 100001000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768660556232
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "151041484046357@lid": {
+      "jid": "151041484046357@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 97978391,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768660556239
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "183782120366329@lid": {
+      "jid": "183782120366329@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 100001000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768660556247
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "205188019277834@lid": {
+      "jid": "205188019277834@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 100001000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768660556252
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "129197347500215@lid": {
+      "jid": "129197347500215@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1010,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768668851778
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      }
+    },
+    "89404475465957@lid": {
+      "jid": "89404475465957@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 0,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 250,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768668851785,
+        "realized_gains": 20944018.901051044
+      },
+      "cooldowns": {
+        "work": 1768732647337,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 1768771321432
+      },
+      "durability": {},
+      "jail_until": 0,
+      "portfolio": {
+        "crypto": {
+          "ETH": {
+            "quantity": 31532.907930353453,
+            "average_buy_price": 3870.459558332368,
+            "total_invested": 122046844.90105104
+          }
+        },
+        "stocks": {}
+      }
+    },
+    "44925861265566@lid": {
+      "jid": "44925861265566@lid",
+      "name": "PHANTOM",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Merchant",
+      "title": "The Novice",
+      "location": "Cyber City",
+      "financials": {
+        "wallet": 2140661655888291.8,
+        "bank": 100000012500,
+        "debt": 5000000,
+        "bank_capacity": 100000000000,
+        "total_earned": 875
+      },
+      "assets": {
+        "property": "prop_moon_base",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 1,
+        "id_citizen": 1,
+        "shield": 1,
+        "id_police": 0,
+        "rifle": 1,
+        "id_thief": 0,
+        "time_orb": 1,
+        "pistol": 1,
+        "drone": 1,
+        "license_thief": 1,
+        "car_sport": 1,
+        "shadow_cloak": 43,
+        "badge_police": 1,
+        "rocket": 1,
+        "starship": 1,
+        "cyber_bike": 1,
+        "rod": 1,
+        "premium_title": 0,
+        "sword": 1,
+        "pickaxe": 1,
+        "prop_apartment": 1,
+        "prop_mansion": 0,
+        "prop_estate": 0,
+        "prop_penthouse": 0,
+        "idcard": 0,
+        "exp_scroll": 0,
+        "void_drive": 1,
+        "chaos_diamond": 24,
+        "id_merchant": 0,
+        "potion": 0,
+        "prop_moon_base": 0,
+        "pfp_female_4": 1,
+        "dyson_blueprint": 4,
+        "galactic_tycoon": 0
+      },
+      "stats": {
+        "level": 8,
+        "xp": 6210,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1769282785204,
+        "travel_count": 41,
+        "realized_gains": 15898932085650.875,
+        "respect": 1000014005,
+        "total_earned": 30000,
+        "gems_mined": 1,
+        "fish_caught": 1
+      },
+      "cooldowns": {
+        "work": 1768723712609,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 1768721348523,
+        "steal_diamond": 1768724107408,
+        "rob_immunity": 1768732966857,
+        "arrest": 1768727308173,
+        "hunt": 1768726689642,
+        "mine": 1768722073399,
+        "fish": 1768721792799
+      },
+      "durability": {
+        "pickaxe": 49
+      },
+      "jail_until": 0,
+      "tasks": {
+        "progress": {
+          "d_gamble_5": 48,
+          "w_mine_20": 1,
+          "d_fish_5": 1
+        },
+        "completed": [],
+        "last_daily_reset": 1768697600151
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {
+          "AAPL": {
+            "quantity": 500000,
+            "average_buy_price": 184.6603996857757,
+            "total_invested": 92330199.84288785
+          }
+        },
+        "forex": {
+          "EUR": {
+            "quantity": 6908.560339548883,
+            "average_buy_price": 1.0656344648038096,
+            "total_invested": 7362
+          }
+        }
+      },
+      "titles": [
+        "Premium 🌟",
+        "Galactic Tycoon 🎩"
+      ],
+      "health": 60
+    },
+    "146729471070270@lid": {
+      "jid": "146729471070270@lid",
+      "name": "shiloh dynasty",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 712787535886484,
+        "bank": 20013625,
+        "debt": 0,
+        "bank_capacity": 40000000
+      },
+      "assets": {
+        "property": "prop_mansion",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 1,
+        "id_citizen": 1,
+        "handcuffs": 1,
+        "id_thief": 1,
+        "id_police": 1,
+        "badge_police": 1,
+        "shield": 1,
+        "pickaxe": 1,
+        "shadow_cloak": 0,
+        "prop_penthouse": 1,
+        "jail_card": 2,
+        "license_thief": 1,
+        "rocket": 1,
+        "drone": 1,
+        "cyber_bike": 1,
+        "rifle": 1,
+        "pistol": 1,
+        "chaos_diamond": 8,
+        "prop_mansion": 2,
+        "energy_drink": 1,
+        "premium_title": 1,
+        "time_orb": 1,
+        "legendary_miner": 1,
+        "prop_private_island": 1,
+        "galactic_tycoon": 0,
+        "car_sport": 1,
+        "dyson_blueprint": 1,
+        "master_hunter": 1,
+        "void_drive": 1,
+        "exp_scroll": 1,
+        "pfp_male_1": 1,
+        "pfp_female_4": 1,
+        "id_merchant": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 150,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768682826027,
+        "realized_gains": 143010333844608.78,
+        "travel_count": 2,
+        "respect": 101002
+      },
+      "portfolio": {
+        "crypto": {
+          "STR": {
+            "quantity": 1101.36,
+            "average_buy_price": 0.9626145903291089,
+            "total_invested": 1060.1852052048673
+          },
+          "ADA": {
+            "quantity": 100,
+            "average_buy_price": 0.4172228892111434,
+            "total_invested": 41.72228892111434
+          },
+          "DOGE": {
+            "quantity": 20,
+            "average_buy_price": 0.12445864595503738,
+            "total_invested": 2.4891729191007474
+          },
+          "BTC": {
+            "quantity": 6000,
+            "average_buy_price": 67907.57465160634,
+            "total_invested": 407445447.90963805
+          },
+          "LINK": {
+            "quantity": 200,
+            "average_buy_price": 15.443278726281733,
+            "total_invested": 3088.6557452563466
+          },
+          "BNB": {
+            "quantity": 30000,
+            "average_buy_price": 648.7537458803308,
+            "total_invested": 19462612.376409926
+          }
+        },
+        "stocks": {
+          "TSLA": {
+            "quantity": 2000,
+            "average_buy_price": 240.12469749609053,
+            "total_invested": 480249.39499218104
+          },
+          "TECH": {
+            "quantity": 1000,
+            "average_buy_price": 124.35433880595104,
+            "total_invested": 124354.33880595105
+          },
+          "BANK": {
+            "quantity": 20000,
+            "average_buy_price": 80.66505140330419,
+            "total_invested": 1613301.0280660838
+          }
+        }
+      },
+      "cooldowns": {
+        "work": 1768729080650,
+        "rob": 1768729614946,
+        "loan_due": 0,
+        "daily": 1768726037540,
+        "arrest": 1768726338133,
+        "rob_immunity": 1768729977531,
+        "steal_diamond": 1768726555856
+      },
+      "durability": {
+        "pickaxe": 50
+      },
+      "jail_until": 0,
+      "tasks": {
+        "progress": {
+          "d_gamble_5": 2
+        },
+        "completed": [],
+        "last_daily_reset": 1768725774798
+      },
+      "titles": [
+        "Galactic Tycoon 🎩"
+      ]
+    },
+    "165815802425420@lid": {
+      "jid": "165815802425420@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1768712270340
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "2348141680626@s.whatsapp.net": {
+      "jid": "2348141680626@s.whatsapp.net",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1770587249837
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "67517187883242@lid": {
+      "jid": "67517187883242@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1769426268455
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "2348108454612@s.whatsapp.net": {
+      "jid": "2348108454612@s.whatsapp.net",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1769429221062
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "18567697317986@lid": {
+      "jid": "18567697317986@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1769629131886
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "120363425431839501@g.us": {
+      "jid": "120363425431839501@g.us",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1769818332643
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "133406214099197@lid": {
+      "jid": "133406214099197@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {}
+    },
+    "2347069615422@s.whatsapp.net": {
+      "jid": "2347069615422@s.whatsapp.net",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1770151233707
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "42701085008043@lid": {
+      "jid": "42701085008043@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {}
+    },
+    "237190038700159@lid": {
+      "jid": "237190038700159@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {}
+    },
+    "246290940211335@lid": {
+      "jid": "246290940211335@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {}
+    },
+    "2348080670589@s.whatsapp.net": {
+      "jid": "2348080670589@s.whatsapp.net",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1770730222174
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "179263965810942@lid": {
+      "jid": "179263965810942@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {}
+    },
+    "171356561903791@lid": {
+      "jid": "171356561903791@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1770739322161
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "239311383470169@lid": {
+      "jid": "239311383470169@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1770739472180
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "142224184610931@lid": {
+      "jid": "142224184610931@lid",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {}
+    },
+    "123@s.whatsapp.net": {
+      "jid": "123@s.whatsapp.net",
+      "name": "Wandering Star",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 1000,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {}
+    }
+  },
+  "config": {
+    "daily_reward": 1000,
+    "work_min": 500,
+    "work_max": 1500,
+    "work_cooldown": 3600000,
+    "daily_cooldown": 43200000,
+    "rob_cooldown": 3600000,
+    "jail_time": 1800000
+  }
+}

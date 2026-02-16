@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starry MD | Command Center</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Background Canvas -->
+    <canvas id="starry-bg"></canvas>
+
+    <!-- UI Overlay -->
+    <div class="ui-container">
+
+        <!-- Navbar -->
+        <nav>
+            <div class="logo">Starry MD <span class="version">v2.0</span></div>
+            <div class="status-indicator" id="connection-status">
+                <span class="dot"></span> Online
+            </div>
+        </nav>
+
+        <!-- Main Dashboard -->
+        <main id="dashboard">
+            <section class="hero">
+                <h1>SYSTEM <span class="glitch" data-text="ONLINE">ONLINE</span></h1>
+                <p>Advanced WhatsApp Automation User-Bot</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <span id="uptime">0h 0m</span>
+                        <label>Uptime</label>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <span id="mode">PUBLIC</span>
+                        <label>Mode</label>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-user-astronaut"></i>
+                        <span id="owner">Owner</span>
+                        <label>Commander</label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Terminal Window -->
+            <section class="terminal-section">
+                <div class="terminal-header">
+                    <div class="buttons">
+                        <span class="close"></span>
+                        <span class="minimize"></span>
+                        <span class="maximize"></span>
+                    </div>
+                    <div class="title">bot.log - bash - 80x24</div>
+                </div>
+                <div class="terminal-window" id="terminal-output">
+                    <div class="log-line system">[SYSTEM] Starry MD Web Interface Initialized...</div>
+                    <div class="log-line info">[INFO] Waiting for stream...</div>
+                </div>
+            </section>
+
+            <!-- Control Panel -->
+            <section class="control-panel">
+                <h3><i class="fas fa-cogs"></i> System Controls</h3>
+                <div class="control-grid">
+                    <button id="btn-restart" class="control-btn warning"><i class="fas fa-power-off"></i> Restart
+                        Bot</button>
+                    <button id="btn-clear" class="control-btn"><i class="fas fa-eraser"></i> Clear Terminal</button>
+                    <button id="btn-audio" class="control-btn"><i class="fas fa-microphone"></i> Test Audio</button>
+                    <button id="btn-ping" class="control-btn"><i class="fas fa-network-wired"></i> Check Ping</button>
+                    <button id="btn-pair-manual" class="control-btn"><i class="fas fa-qrcode"></i> Pair Device</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Connect / Pairing Overlay (Hidden by default) -->
+        <div id="connect-overlay" class="hidden">
+            <div class="connect-box">
+                <h2>Initialize Connection</h2>
+                <div class="tabs">
+                    <button class="tab active" data-tab="qr">QR Code</button>
+                    <button class="tab" data-tab="phone">Phone Number</button>
+                </div>
+
+                <div class="tab-content active" id="qr-content">
+                    <div class="qr-placeholder">
+                        <div class="scanner-line"></div>
+                        <img id="qr-image" src="" alt="Waiting for QR..." style="display:none;">
+                        <p id="qr-status">Waiting for QRCode...</p>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="phone-content">
+                    <div class="input-group">
+                        <span class="prefix">+</span>
+                        <input type="tel" id="phone-input" placeholder="Enter Country Code + Number">
+                    </div>
+                    <button id="pair-btn" class="cyber-btn">INITIATE PAIRING_</button>
+                    <div id="pairing-code-display" class="hidden">
+                        <p>PAIRING CODE:</p>
+                        <h3 class="glitch-code">--- --- --- ---</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/starry-bg.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/connect.js"></script>
+</body>
+
+</html>

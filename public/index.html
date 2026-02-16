@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starry MD | The Future of WhatsApp</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Landing Page Specific Overrides */
+        .landing-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            z-index: 10;
+            position: relative;
+        }
+
+        .landing-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #00f3ff, #bd00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+        }
+
+        .landing-hero p {
+            font-size: 1.5rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: transparent;
+            border: 2px solid #00f3ff;
+            color: #00f3ff;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            font-family: var(--font-mono);
+        }
+
+        .cta-button:hover {
+            background: #00f3ff;
+            color: #000;
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.5);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 20px;
+        }
+
+        .feature-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            border-color: #bd00ff;
+        }
+
+        .feature-box i {
+            font-size: 2.5rem;
+            color: #bd00ff;
+            margin-bottom: 20px;
+        }
+
+        .feature-box h3 {
+            margin: 0;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Canvas -->
+    <canvas id="starry-bg"></canvas>
+
+    <div class="landing-container">
+        <div class="landing-hero">
+            <h1>Starry MD</h1>
+            <p>Experience the next generation of WhatsApp automation. Powerful, beautiful, and completely under your
+                control.</p>
+
+            <a href="dashboard.html" class="cta-button">
+                Launch Dashboard <i class="fas fa-rocket"></i>
+            </a>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-box">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Anti-Delete</h3>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-robot"></i>
+                <h3>AI Powered</h3>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-gem"></i>
+                <h3>Economy</h3>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-bolt"></i>
+                <h3>Fast & Secure</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script for Background -->
+    <script src="js/starry-bg.js"></script>
+</body>
+
+</html>

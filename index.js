@@ -1,23 +1,168 @@
-require('dotenv').config();
-const {
-    default: makeWASocket,
-    useMultiFileAuthState,
+import 'dotenv/config';
+import makeWASocket, {
     DisconnectReason,
-    fetchLatestBaileysVersion
-} = require("@whiskeysockets/baileys");
-const { Boom } = require("@hapi/boom");
-const fs = require("fs-extra");
-const path = require("path");
-const utils = require("./lib/utils");
-const handler = require("./lib/handler");
-const status = require("./lib/status");
-const qrcode = require("qrcode-terminal");
-const figlet = require("figlet");
-const config = require("./config");
-const economyGame = require("./lib/economy-game");
-const sessionManager = require("./lib/session-manager");
+    fetchLatestBaileysVersion,
+    Browsers,
+    proto
+} from "@whiskeysockets/baileys";
+import { Boom } from "@hapi/boom";
+import fs from "fs-extra";
+import path from "path";
+import { fileURLToPath } from 'url';
+import utils from "./lib/core/utils.js";
+import handler from "./lib/core/handler.js";
+import status from "./lib/utils/status.js";
+import qrcode from "qrcode-terminal";
 
+import figlet from "figlet";
+import config from "./config.js";
+import economyGame from "./lib/systems/economy-game.js";
+import sessionManager from "./lib/core/session-manager.js";
+import dbManager from "./lib/core/db-manager.js";
+import { useDatabaseAuth } from "./lib/core/auth-adapter.js";
+import pino from "pino";
+import NodeCache from "node-cache";
+import express from "express";
+import http from "http";
+import { Server } from "socket.io";
+import { spawn } from 'child_process';
+import readline from "readline";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// --- WEB SERVER INIT ---
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server);
+const PORT = process.env.PORT || 3000;
+
+// Serve static files from 'public' directory
+app.use(express.static(path.join(__dirname, "public")));
+
+// API Endpoints
+app.get("/api/status", (req, res) => {
+    res.json({
+        status: "online", // Simple status for now
+        mode: botState.mode,
+        uptime: process.uptime(),
+        owner: config.OWNER_ID
+    });
+});
+
+// Socket.IO Connection
+let globalSock; // Shared socket instance
+
+io.on("connection", (socket) => {
+    // Send initial handshake data
+    socket.emit("init", {
+        message: "Starry MD Terminal Connected",
+        timestamp: Date.now()
+    });
+
+    socket.on("pairing-request", async (number) => {
+        utils.log("WEB", `Pairing request received for: ${number}`);
+        if (!globalSock) {
+            return socket.emit('error', 'Bot not initialized yet');
+        }
+
+        try {
+            // Remove non-numeric chars
+            const cleanNumber = number.replace(/[^0-9]/g, '');
+            const code = await globalSock.requestPairingCode(cleanNumber);
+            socket.emit('pairing-code', code);
+            utils.log("WEB", `Pairing Code Sent to Web: ${code}`);
+        } catch (err) {
+            utils.log("ERROR", `Web Pairing Failed: ${err.message}`);
+            socket.emit('error', 'Pairing Failed: ' + err.message);
+        }
+    });
+
+    socket.on("command-restart", () => {
+        utils.log("WEB", "Restart command received from Dashboard.");
+        socket.emit("log", { tag: "SYSTEM", message: "Restarting Bot Process...", timestamp: Date.now() });
+
+        const restartBot = async () => {
+            utils.log("SYSTEM", "Closing Server for Restart...");
+
+            // 1. Close Socket.IO
+            if (io) await new Promise(resolve => io.close(() => resolve()));
+
+            // 2. Close HTTP Server
+            if (server) await new Promise(resolve => server.close((err) => {
+                if (err) utils.log("WARN", "Server close error: " + err.message);
+                resolve();
+            }));
+
+            utils.log("SYSTEM", "Server Closed. Spawning new process...");
+
+            // 3. Spawn
+            const subprocess = spawn(process.argv[0], process.argv.slice(1), {
+                detached: true,
+                stdio: 'ignore',
+                cwd: process.cwd(),
+                env: { ...process.env, RESTART_DELAY: '2000' } // Increased delay to 2s
+            });
+
+            subprocess.unref();
+            process.exit(0);
+        };
+
+        restartBot();
+    });
+
+    socket.on("command-test-audio", async () => {
+        utils.log("WEB", "Audio Test command received.");
+        if (globalSock) {
+            // Send presence update to the owner (if known) or just log it
+            // Since we don't have a specific JID to targeting for "test", we'll just log
+            utils.log("AUDIO", "Simulating Audio Recording on dummy JID...");
+        } else {
+            socket.emit("log", { tag: "ERROR", message: "Bot not connected to WA", timestamp: Date.now() });
+        }
+    });
+
+    socket.on("command-ping", () => {
+        socket.emit("log", { tag: "INFO", message: `Pong! Server Uptime: ${process.uptime().toFixed(2)}s`, timestamp: Date.now() });
+    });
+});
+
+// Start Server with optional delay
+const startServer = () => {
+    server.listen(PORT, () => {
+        utils.log("SYSTEM", `Web Interface running on port ${PORT}`);
+    }).on('error', (e) => {
+        if (e.code === 'EADDRINUSE') {
+            utils.log("WARN", `Port ${PORT} in use, retrying in 1s...`);
+            setTimeout(() => {
+                server.close();
+                server.listen(PORT);
+            }, 1000);
+        } else {
+            utils.log("ERROR", `Server Error: ${e.message}`);
+        }
+    });
+};
+
+if (process.env.RESTART_DELAY) {
+    setTimeout(startServer, parseInt(process.env.RESTART_DELAY));
+} else {
+    startServer();
+}
+
+// --- LOG OVERRIDE FOR STREAMING ---
+const originalLog = utils.log;
+utils.log = (tag, message) => {
+    // Call original log to keep console/file logging working
+    originalLog(tag, message);
+
+    // Stream to Web Interface
+    io.emit("log", {
+        tag,
+        message,
+        timestamp: Date.now()
+    });
+};
 
 // --- 1. BOOTSTRAP BOT STATE ---
 const botState = {
@@ -25,25 +170,40 @@ const botState = {
     cooldowns: new Map(),
     processedMessages: new Set(),
     handshakeWaiting: new Set(),
-    contacts: fs.readJsonSync("./database/contacts.json", { throws: false }) || {},
+    contacts: {},
     ownerID: (config.OWNER_ID || process.env.OWNER_ID) + "@s.whatsapp.net",
     ghostBuffer: new Map(),
     sleepCooldowns: new Map(),
     antiLinkGroups: new Set(),
-    groupCounts: new Map(), // Tracks bulk spam per group
-    warns: new Map(), // Tracks user warnings per group
-    reactions: fs.readJsonSync("./database/reactions.json", { throws: false }) || {},
-    memory: {}, // AI Chat context memory
-    groupMetadata: {}, // Cache for group roles and settings
-    settings: fs.readJsonSync("./database/bot_settings.json", { throws: false }) || { autoBio: true, customBio: null, viewOnceMode: "chat" },
-    groupSettings: fs.readJsonSync("./database/group_settings.json", { throws: false }) || {},
-    bannedChats: fs.readJsonSync("./database/banned_chats.json", { throws: false }) || []
+    groupCounts: new Map(),
+    warns: new Map(),
+    reactions: {},
+    memory: {},
+    groupMetadata: {},
+    settings: { autoBio: true, customBio: null, viewOnceMode: "chat" },
+    groupSettings: {},
+    bannedChats: []
 };
-botState.settings.viewOnceMode = botState.settings.viewOnceMode || "chat";
+
+// --- Hydrate State (Async) ---
+async function hydrateBotState() {
+    utils.log("DB", "Hydrating Bot State from Database...");
+
+    botState.contacts = await dbManager.load("./database/contacts.json", {});
+    botState.reactions = await dbManager.load("./database/reactions.json", {});
+    botState.settings = await dbManager.load("./database/bot_settings.json", { autoBio: true, customBio: null, viewOnceMode: "chat" });
+    botState.groupSettings = await dbManager.load("./database/group_settings.json", {});
+    botState.bannedChats = await dbManager.load("./database/banned_chats.json", []);
+
+    // Ensure defaults
+    botState.settings.viewOnceMode = botState.settings.viewOnceMode || "chat";
+    utils.log("DB", "State Hydration Complete.");
+}
 
 // --- 2. BOOT ART & UTILS ---
 function printBootArt() {
-    console.clear();
+    // console.clear(); // Removed to prevent flashing
+
     console.log(figlet.textSync('Starry MD', {
         font: 'Standard',
         horizontalLayout: 'default',
@@ -109,9 +269,21 @@ async function syncExistingContacts(sock) {
     }
 }
 
+// --- Global Interval Tracking ---
+let bioInterval;
+let gameInterval;
+let hasCleanedSession = false; // Prevent infinite loop on restart
+
 async function startStarry() {
+    // Clear previous intervals to prevent memory leaks/zombie loops
+    if (bioInterval) clearInterval(bioInterval);
+    if (gameInterval) clearInterval(gameInterval);
+
     printBootArt();
     utils.log("SYSTEM", "Initializing Starry MD Core...");
+
+    // Hydrate DB
+    await hydrateBotState();
 
     // Restore Sub-Bots
     await sessionManager.restoreSessions();
@@ -119,15 +291,20 @@ async function startStarry() {
     const args = process.argv.slice(2);
 
     // Improved Argument Parser
-    let usePairingCode = false;
+    let usePairingCode = true; // Default to Mobile Mode
     let selectedSession = null; // Default to null for standard auth_baileys
-    const knownFlags = ['--mobile', '-m', '--mn', '--session', '-s'];
+    let cleanSession = false; // Flag for cleaning session
+    const knownFlags = ['--mobile', '-m', '--mn', '--session', '-s', '--qr', '--clean', '-c'];
 
     // Scan args
     for (let i = 0; i < args.length; i++) {
         const arg = args[i];
         if (arg === '--mn' || arg === '--mobile' || arg === '-m') {
             usePairingCode = true;
+        } else if (arg === '--qr') {
+            usePairingCode = false;
+        } else if (arg === '--clean' || arg === '-c') {
+            cleanSession = true;
         } else if (arg === '--session' || arg === '-s') {
             if (args[i + 1] && !args[i + 1].startsWith('-')) {
                 selectedSession = args[i + 1];
@@ -138,27 +315,71 @@ async function startStarry() {
         } else if (arg.startsWith('-s=')) {
             selectedSession = arg.split('=')[1];
         } else if (arg.startsWith('-')) {
-            utils.log("WARN", `Unknown argument '${arg}' ignored. To name a session, use '--session=${arg.replace(/^-+/, '')}' or just '${arg.replace(/^-+/, '')}'`);
+            utils.log("WARN", `Unknown argument '${arg}' ignored.`);
         }
     }
 
     // Determine session from naked args if not set via flags
     if (!selectedSession) {
-        const potentialSession = args.find(a => !a.startsWith('-') && !['--mobile', '-m', '--mn'].includes(a));
+        const potentialSession = args.find(a => !a.startsWith('-') && !['--mobile', '-m', '--mn', '--qr', '--clean', '-c'].includes(a));
         if (potentialSession) selectedSession = potentialSession;
     }
 
-    // Set Log File Name based on Session
-    utils.setSessionName(selectedSession);
+    // --- RESTART/RESET HANDLING (File Flag) ---
+    let fastStartNumber = null;
 
+
+    // Set Log File Name based on Session
+    // Determine session ID and paths
+    const sessionId = selectedSession || "main";
     const authPath = selectedSession ? `auth_baileys_${selectedSession}` : "auth_baileys";
-    const { state, saveCreds } = await useMultiFileAuthState(authPath);
+    const sessionFile = `database/session_${sessionId}.json`;
+
+    // --- CLEAN SESSION LOGIC ---
+    if (cleanSession) {
+        if (!hasCleanedSession) {
+            let deleted = false;
+
+            // 1. Clean Folder (Legacy)
+            const fullAuthPath = path.join(process.cwd(), authPath);
+            if (fs.existsSync(fullAuthPath)) {
+                utils.log("SYSTEM", `Argument --clean detected. Deleting session folder: ${authPath}`);
+                try {
+                    fs.removeSync(fullAuthPath);
+                    deleted = true;
+                } catch (err) {
+                    utils.log("ERROR", `Failed to delete session folder: ${err.message}`);
+                }
+            }
+
+            // 2. Clean Database Session File (New)
+            const fullSessionFile = path.join(process.cwd(), sessionFile);
+            if (fs.existsSync(fullSessionFile)) {
+                utils.log("SYSTEM", `Argument --clean detected. Deleting session file: ${sessionFile}`);
+                try {
+                    fs.removeSync(fullSessionFile);
+                    deleted = true;
+                } catch (err) {
+                    utils.log("ERROR", `Failed to delete session file: ${err.message}`);
+                }
+            }
+
+            if (!deleted) {
+                utils.log("SYSTEM", `Argument --clean detected, but no session found to delete.`);
+            } else {
+                utils.log("SYSTEM", `Session cleanup complete.`);
+            }
+            hasCleanedSession = true; // Mark as done
+        }
+    }
+
+    // --- AUTHENTICATION ---
+    const { state, saveCreds } = await useDatabaseAuth(sessionId);
     const { version, isLatest } = await fetchLatestBaileysVersion();
     utils.log("CONN", `Using WA v${version.join(".")}, isLatest: ${isLatest}`);
-    utils.log("CONN", `Session: ${selectedSession || "Default"} | Auth Path: ./${authPath}`);
+    utils.log("CONN", `Session: Database (${sessionId})`);
 
     // Readline Question Helper
-    const readline = require("readline");
     const question = (text) => {
         const rl = readline.createInterface({
             input: process.stdin,
@@ -172,19 +393,56 @@ async function startStarry() {
         });
     };
 
-    const sock = makeWASocket({
+    // --- CACHE INIT ---
+    const groupCache = new NodeCache({ stdTTL: 5 * 60, useClones: false });
+
+    let sock;
+    sock = makeWASocket({
         version,
         auth: state,
-        printQRInTerminal: !usePairingCode, // Disable QR if using pairing code
-        browser: ["Ubuntu", "Chrome", "20.0.04"], // Standard browser for better compatibility
-        syncFullHistory: false
+        logger: pino({ level: "silent" }), // Suppress noisy JSON logs
+        browser: Browsers.ubuntu('Chrome'), // Use standard Baileys helper
+        syncFullHistory: false,
+        // Cached Group Metadata Helper to prevent 429 Bans
+        cachedGroupMetadata: async (jid) => {
+            const cached = groupCache.get(jid);
+            if (cached) return cached;
+            if (!sock) return undefined; // Safety check
+            try {
+                const metadata = await sock.groupMetadata(jid);
+                groupCache.set(jid, metadata);
+                return metadata;
+            } catch (e) {
+                return undefined;
+            }
+        },
+        // Implement getMessage for Polls & Resends
+        getMessage: async (key) => {
+            const { remoteJid, id } = key;
+            if (!remoteJid || !id) return undefined;
+
+            const bufferKey = `${remoteJid}_${id}`;
+            if (botState.ghostBuffer && botState.ghostBuffer.has(bufferKey)) {
+                return botState.ghostBuffer.get(bufferKey).msg.message;
+            }
+
+            // Fallback: Return empty message to prevent crashes
+            return undefined;
+        }
     });
+
+    globalSock = sock; // Expose to Web Interface
 
     // Pairing Code Logic
     if (usePairingCode && !sock.authState.creds.me) {
         // Wait a tick to ensure socket init
         setTimeout(async () => {
-            let phoneNumber = await question('Please enter your phone number (International Format, e.g., 23480123...): ');
+            let phoneNumber = fastStartNumber; // Use cached number if available
+
+            if (!phoneNumber) {
+                phoneNumber = await question('Please enter your phone number (International Format, e.g., 23480123...): ');
+            }
+
             phoneNumber = phoneNumber.replace(/[^0-9]/g, ''); // Sanitize
 
             if (!phoneNumber) {
@@ -192,8 +450,19 @@ async function startStarry() {
                 process.exit(1);
             }
 
-            const code = await sock.requestPairingCode(phoneNumber);
-            utils.log("PAIRING", `Your Pairing Code: ${code}`);
+            try {
+                const code = await sock.requestPairingCode(phoneNumber);
+                utils.log("PAIRING", `Your Pairing Code: ${code}`);
+                io.emit("pairing-code", code); // Emit to frontend
+            } catch (err) {
+                utils.log("ERROR", `Failed to retrieve pairing code: ${err.message || err}`);
+                if (String(err).includes('bad_param')) {
+                    utils.log("ERROR", "The phone number format might be invalid or too short.");
+                } else if (String(err).includes('rate-overlimit')) {
+                    utils.log("ERROR", "You are trying too often. Please wait a while before retrying.");
+                }
+                process.exit(1);
+            }
         }, 3000);
     }
 
@@ -207,24 +476,49 @@ async function startStarry() {
         if (qr && !usePairingCode) {
             utils.log("CONN", "New QR Code received. Scanning window open:");
             qrcode.generate(qr, { small: true });
+            io.emit("qr", qr); // Emit to frontend
         }
 
         if (connection === "close") {
-            const shouldReconnect = (lastDisconnect.error instanceof Boom) ?
-                lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut : true;
-            utils.log("CONN", `Connection closed. Reason: ${lastDisconnect.error}. Reconnecting: ${shouldReconnect}`);
-            if (shouldReconnect) {
-                setTimeout(() => startStarry(), 5000); // 5s backoff to prevent rapid loops
+            const reason = lastDisconnect.error?.output?.statusCode;
+            const errorMsg = lastDisconnect.error?.message || String(lastDisconnect.error);
+
+            utils.log("CONN", `Connection closed. Reason: ${reason || "Unknown"} | Error: ${errorMsg}`);
+
+            // --- CONNECTION ERROR HANDLING STRATEGY ---
+            switch (reason) {
+                case DisconnectReason.loggedOut:
+                    utils.log("CONN", "❌ Device Logged Out. Please delete session and scan again.");
+                    process.exit(1); // Stop to prevent loop
+                    break;
+
+                case DisconnectReason.connectionReplaced:
+                    utils.log("CONN", "⚠️ Connection Replaced. Another session was opened.");
+                    utils.log("CONN", "🛑 Stopping bot to prevent conflict/ban.");
+                    process.exit(0); // Stop to avoid fighting
+                    break;
+
+                case DisconnectReason.restartRequired:
+                    utils.log("CONN", "🔄 Restart Required. Reconnecting immediately...");
+                    startStarry(); // No delay needed
+                    break;
+
+                case DisconnectReason.timedOut:
+                    utils.log("CONN", "⏳ Connection Timed Out. Reconnecting in 5s...");
+                    setTimeout(startStarry, 5000);
+                    break;
+
+                default:
+                    // Default Handling (500s, 428, etc)
+                    utils.log("CONN", `⚠️ Unknown Disconnect (${reason}). Reconnecting in 5s...`);
+                    setTimeout(startStarry, 5000);
             }
         } else if (connection === "open") {
             utils.log("CONN", "✅ Starry MD 2.0 Connected Successfully!");
 
-            // FIREPROOF CONTACT SYNC: Load all existing contacts in background
-            syncExistingContacts(sock);
-
             // Start Bio Update Loop (Every hour)
             updateBio(sock);
-            setInterval(() => updateBio(sock), 3600000);
+            bioInterval = setInterval(() => updateBio(sock), 3600000);
 
             // Start Status Scheduler
             status.initScheduler(sock);
@@ -420,7 +714,7 @@ async function startStarry() {
         }
     });
     // --- 6. GAME LOOP (Events) ---
-    setInterval(async () => {
+    gameInterval = setInterval(async () => {
         try {
             const diamond = await economyGame.processDiamondEvent(sock);
             if (diamond) {
@@ -431,6 +725,7 @@ async function startStarry() {
             utils.log("ERROR", `Diamond loop error: ${e.message}`);
         }
     }, 60000); // Check every minute
+
 }
 
 // Start the engine
@@ -438,6 +733,32 @@ startStarry().catch(err => {
     utils.log("CRITICAL", `Start Error: ${err.message}`);
     console.error(err);
 });
+
+// --- GRACEFUL SHUTDOWN (SIGINT/SIGTERM) ---
+const gracefulShutdown = async (signal) => {
+    utils.log("SYSTEM", `Received ${signal}. Closing server...`);
+    try {
+        if (io) {
+            await new Promise((resolve) => io.close(() => resolve()));
+            utils.log("SYSTEM", "Socket.IO closed.");
+        }
+        if (server) {
+            await new Promise((resolve) => server.close((err) => {
+                if (err) utils.log("WARN", "Server close error: " + err.message);
+                resolve();
+            }));
+            utils.log("SYSTEM", "HTTP Server closed.");
+        }
+        // Force exit if still hanging - though usually close() is enough
+        process.exit(0);
+    } catch (err) {
+        utils.log("ERROR", `Error during shutdown: ${err.message}`);
+        process.exit(1);
+    }
+};
+
+process.on('SIGINT', () => gracefulShutdown('SIGINT'));
+process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
 
 // --- GLOBAL EXCEPTION HANDLING (The Safety Net) ---
 process.on('uncaughtException', (err) => {
