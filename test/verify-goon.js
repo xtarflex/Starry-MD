@@ -1,7 +1,8 @@
-const path = require('path');
-const fs = require('fs-extra');
-const goonController = require(path.join(__dirname, '../lib/core/controllers/goon-controller'));
-const handler = require(path.join(__dirname, '../lib/core/handler'));
+import path from 'path';
+import { fileURLToPath } from 'url';
+import goonController from '../lib/core/controllers/goon-controller.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /**
  * Mocking a verification flow for Goon Mode
@@ -36,7 +37,16 @@ async function verifyGoonMode() {
     };
 
     console.log("\n--- TEST: .goon start ---");
+    // Simulate valid start command
     await goonController.handleGoon(mockMsg, mockSock, botState, 'goon', ['start', 'blonde', '1']);
+
+    console.log("\n--- TEST: Safety Check (Zero/Negative Interval) ---");
+    // Simulate malicious/accidental zero interval
+    const maliciousMsg = { ...mockMsg, message: { conversation: '.goon start blonde 0' } };
+    await goonController.handleGoon(maliciousMsg, mockSock, botState, 'goon', ['start', 'blonde', '0']);
+
+    // VERIFY: Did it default to 5?
+    console.log("Session Interval (should be 5):", botState.activeGoonSession['12345@s.whatsapp.net'].interval);
 
     console.log("\n--- TEST: .edge ---");
     await goonController.handleGoon(mockMsg, mockSock, botState, 'edge', []);
@@ -49,7 +59,9 @@ async function verifyGoonMode() {
 
     console.log("\n🛑 VERIFICATION COMPLETE. CLEANING UP...");
     if (botState.activeGoonSession['12345@s.whatsapp.net']) {
-        clearInterval(botState.activeGoonSession['12345@s.whatsapp.net'].timer);
+        const session = botState.activeGoonSession['12345@s.whatsapp.net'];
+        clearTimeout(session.timer);
+        session.active = false;
     }
 }
 

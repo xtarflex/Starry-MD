@@ -11,7 +11,7 @@ import path from "path";
 import { fileURLToPath } from 'url';
 import utils from "./lib/core/utils.js";
 import handler from "./lib/core/handler.js";
-import status from "./lib/utils/status.js";
+import statusModule from "./lib/utils/status.js"; // Changed 'status' to 'statusModule' as per instruction
 import qrcode from "qrcode-terminal";
 
 import figlet from "figlet";
@@ -22,147 +22,18 @@ import dbManager from "./lib/core/db-manager.js";
 import { useDatabaseAuth } from "./lib/core/auth-adapter.js";
 import pino from "pino";
 import NodeCache from "node-cache";
-import express from "express";
-import http from "http";
-import { Server } from "socket.io";
-import { spawn } from 'child_process';
+// --- TERMINAL MODE INIT ---
 import readline from "readline";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
-// --- WEB SERVER INIT ---
-const app = express();
-const server = http.createServer(app);
-const io = new Server(server);
-const PORT = process.env.PORT || 3000;
+// Start the Bot directly
+// if (process.env.RESTART_DELAY) {
+//     setTimeout(startStarry, parseInt(process.env.RESTART_DELAY));
+// } else {
+//     startStarry();
+// }
+// (Logic moved to bottom to ensure functions are defined)
 
-// Serve static files from 'public' directory
-app.use(express.static(path.join(__dirname, "public")));
-
-// API Endpoints
-app.get("/api/status", (req, res) => {
-    res.json({
-        status: "online", // Simple status for now
-        mode: botState.mode,
-        uptime: process.uptime(),
-        owner: config.OWNER_ID
-    });
-});
-
-// Socket.IO Connection
-let globalSock; // Shared socket instance
-
-io.on("connection", (socket) => {
-    // Send initial handshake data
-    socket.emit("init", {
-        message: "Starry MD Terminal Connected",
-        timestamp: Date.now()
-    });
-
-    socket.on("pairing-request", async (number) => {
-        utils.log("WEB", `Pairing request received for: ${number}`);
-        if (!globalSock) {
-            return socket.emit('error', 'Bot not initialized yet');
-        }
-
-        try {
-            // Remove non-numeric chars
-            const cleanNumber = number.replace(/[^0-9]/g, '');
-            const code = await globalSock.requestPairingCode(cleanNumber);
-            socket.emit('pairing-code', code);
-            utils.log("WEB", `Pairing Code Sent to Web: ${code}`);
-        } catch (err) {
-            utils.log("ERROR", `Web Pairing Failed: ${err.message}`);
-            socket.emit('error', 'Pairing Failed: ' + err.message);
-        }
-    });
-
-    socket.on("command-restart", () => {
-        utils.log("WEB", "Restart command received from Dashboard.");
-        socket.emit("log", { tag: "SYSTEM", message: "Restarting Bot Process...", timestamp: Date.now() });
-
-        const restartBot = async () => {
-            utils.log("SYSTEM", "Closing Server for Restart...");
-
-            // 1. Close Socket.IO
-            if (io) await new Promise(resolve => io.close(() => resolve()));
-
-            // 2. Close HTTP Server
-            if (server) await new Promise(resolve => server.close((err) => {
-                if (err) utils.log("WARN", "Server close error: " + err.message);
-                resolve();
-            }));
-
-            utils.log("SYSTEM", "Server Closed. Spawning new process...");
-
-            // 3. Spawn
-            const subprocess = spawn(process.argv[0], process.argv.slice(1), {
-                detached: true,
-                stdio: 'ignore',
-                cwd: process.cwd(),
-                env: { ...process.env, RESTART_DELAY: '2000' } // Increased delay to 2s
-            });
-
-            subprocess.unref();
-            process.exit(0);
-        };
-
-        restartBot();
-    });
-
-    socket.on("command-test-audio", async () => {
-        utils.log("WEB", "Audio Test command received.");
-        if (globalSock) {
-            // Send presence update to the owner (if known) or just log it
-            // Since we don't have a specific JID to targeting for "test", we'll just log
-            utils.log("AUDIO", "Simulating Audio Recording on dummy JID...");
-        } else {
-            socket.emit("log", { tag: "ERROR", message: "Bot not connected to WA", timestamp: Date.now() });
-        }
-    });
-
-    socket.on("command-ping", () => {
-        socket.emit("log", { tag: "INFO", message: `Pong! Server Uptime: ${process.uptime().toFixed(2)}s`, timestamp: Date.now() });
-    });
-});
-
-// Start Server with optional delay
-const startServer = () => {
-    server.listen(PORT, () => {
-        utils.log("SYSTEM", `Web Interface running on port ${PORT}`);
-    }).on('error', (e) => {
-        if (e.code === 'EADDRINUSE') {
-            utils.log("WARN", `Port ${PORT} in use, retrying in 1s...`);
-            setTimeout(() => {
-                server.close();
-                server.listen(PORT);
-            }, 1000);
-        } else {
-            utils.log("ERROR", `Server Error: ${e.message}`);
-        }
-    });
-};
-
-if (process.env.RESTART_DELAY) {
-    setTimeout(startServer, parseInt(process.env.RESTART_DELAY));
-} else {
-    startServer();
-}
-
-// --- LOG OVERRIDE FOR STREAMING ---
-const originalLog = utils.log;
-utils.log = (tag, message) => {
-    // Call original log to keep console/file logging working
-    originalLog(tag, message);
-
-    // Stream to Web Interface
-    io.emit("log", {
-        tag,
-        message,
-        timestamp: Date.now()
-    });
-};
 
 // --- 1. BOOTSTRAP BOT STATE ---
 const botState = {
@@ -201,19 +72,21 @@ async function hydrateBotState() {
 }
 
 // --- 2. BOOT ART & UTILS ---
-function printBootArt() {
-    // console.clear(); // Removed to prevent flashing
+import chalk from 'chalk';
 
-    console.log(figlet.textSync('Starry MD', {
+function printBootArt() {
+    console.clear();
+    console.log(chalk.cyan(figlet.textSync('Starry MD', {
         font: 'Standard',
         horizontalLayout: 'default',
         verticalLayout: 'default',
         width: 80,
         whitespaceBreak: true
-    }));
+    })));
+    console.log(chalk.gray("----------------------------------------------------------------"));
     utils.log("SYSTEM", "Starry MD v2.0 :: System Online");
     utils.log("SYSTEM", `[Mode] ${botState.mode.toUpperCase()} :: [Owner] ${config.OWNER_ID}`);
-    console.log("----------------------------------------------------------------");
+    console.log(chalk.gray("----------------------------------------------------------------"));
 }
 
 async function updateBio(sock) {
@@ -431,7 +304,7 @@ async function startStarry() {
         }
     });
 
-    globalSock = sock; // Expose to Web Interface
+    global.sock = sock; // Expose to Web Interface
 
     // Pairing Code Logic
     if (usePairingCode && !sock.authState.creds.me) {
@@ -440,7 +313,7 @@ async function startStarry() {
             let phoneNumber = fastStartNumber; // Use cached number if available
 
             if (!phoneNumber) {
-                phoneNumber = await question('Please enter your phone number (International Format, e.g., 23480123...): ');
+                phoneNumber = await question(chalk.yellow('Please enter your phone number (International Format, e.g., 23480123...): '));
             }
 
             phoneNumber = phoneNumber.replace(/[^0-9]/g, ''); // Sanitize
@@ -452,8 +325,7 @@ async function startStarry() {
 
             try {
                 const code = await sock.requestPairingCode(phoneNumber);
-                utils.log("PAIRING", `Your Pairing Code: ${code}`);
-                io.emit("pairing-code", code); // Emit to frontend
+                utils.log("PAIRING", `Your Pairing Code: ${chalk.bold.white(code)}`);
             } catch (err) {
                 utils.log("ERROR", `Failed to retrieve pairing code: ${err.message || err}`);
                 if (String(err).includes('bad_param')) {
@@ -476,7 +348,6 @@ async function startStarry() {
         if (qr && !usePairingCode) {
             utils.log("CONN", "New QR Code received. Scanning window open:");
             qrcode.generate(qr, { small: true });
-            io.emit("qr", qr); // Emit to frontend
         }
 
         if (connection === "close") {
@@ -554,7 +425,6 @@ async function startStarry() {
 
             // --- STATUS NOTIFICATION CAPTURE ---
             if (from === 'status@broadcast') {
-                const statusModule = require('./lib/status');
                 await statusModule.saveStatus(msg, sock);
                 // Don't add to ghost buffer, continue to next message
                 continue;
@@ -738,17 +608,6 @@ startStarry().catch(err => {
 const gracefulShutdown = async (signal) => {
     utils.log("SYSTEM", `Received ${signal}. Closing server...`);
     try {
-        if (io) {
-            await new Promise((resolve) => io.close(() => resolve()));
-            utils.log("SYSTEM", "Socket.IO closed.");
-        }
-        if (server) {
-            await new Promise((resolve) => server.close((err) => {
-                if (err) utils.log("WARN", "Server close error: " + err.message);
-                resolve();
-            }));
-            utils.log("SYSTEM", "HTTP Server closed.");
-        }
         // Force exit if still hanging - though usually close() is enough
         process.exit(0);
     } catch (err) {

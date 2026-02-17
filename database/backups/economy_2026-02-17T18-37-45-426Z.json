@@ -1,0 +1,79 @@
+{
+  "users": {
+    "12345@s.whatsapp.net": {
+      "jid": "12345@s.whatsapp.net",
+      "name": "TestUser",
+      "bio": "Exploring the Starry Multiverse.",
+      "role": "Citizen",
+      "title": "The Novice",
+      "location": "Earth",
+      "financials": {
+        "wallet": 999,
+        "bank": 0,
+        "debt": 0,
+        "bank_capacity": 500
+      },
+      "assets": {
+        "property": "prop_box",
+        "vehicle": "feet",
+        "staff": []
+      },
+      "inventory": {
+        "debit_card": 0,
+        "id_citizen": 1
+      },
+      "stats": {
+        "level": 1,
+        "xp": 0,
+        "health": 100,
+        "stamina": 100,
+        "last_billing": 1771353463387
+      },
+      "portfolio": {
+        "crypto": {},
+        "stocks": {}
+      },
+      "cooldowns": {
+        "work": 0,
+        "rob": 0,
+        "loan_due": 0,
+        "daily": 0
+      },
+      "durability": {},
+      "jail_until": 0
+    },
+    "house_treasury": {
+      "jid": "house_treasury",
+      "name": "🏛️ Central Bank",
+      "role": "System",
+      "location": "Cyber City",
+      "financials": {
+        "wallet": 0,
+        "bank": 10000001,
+        "debt": 0,
+        "bank_capacity": 999999999
+      },
+      "assets": {
+        "property": "prop_estate",
+        "vehicle": "rocket",
+        "staff": []
+      },
+      "inventory": {},
+      "stats": {
+        "level": 999,
+        "xp": 0
+      },
+      "durability": {},
+      "cooldowns": {}
+    }
+  },
+  "config": {
+    "daily_reward": 1000,
+    "work_min": 500,
+    "work_max": 1500,
+    "work_cooldown": 3600000,
+    "daily_cooldown": 43200000,
+    "rob_cooldown": 3600000,
+    "jail_time": 1800000
+  }
+}
