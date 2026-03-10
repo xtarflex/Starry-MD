@@ -34,5 +34,9 @@
     "telegraf-stateless-question": "^2.0.1",
     "wa-sticker-formatter": "^4.4.4",
     "yt-search": "^2.13.1"
+  },
+  "devDependencies": {
+    "@jest/globals": "^30.2.0",
+    "jest": "^30.2.0"
   }
 }
