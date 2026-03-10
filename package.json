@@ -22,6 +22,7 @@
     "fs-extra": "^11.3.3",
     "g-i-s": "^2.1.7",
     "groq-sdk": "^0.37.0",
+    "jest": "^30.3.0",
     "jimp": "^1.6.0",
     "link-preview-js": "^3.0.4",
     "lyrics-finder": "^21.7.0",
