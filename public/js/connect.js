@@ -50,14 +50,30 @@ socket.on('pairing-code', (code) => {
     pairBtn.innerText = "CODE RECEIVED";
 });
 
-// Listen for QR (requires qrcode lib or image data)
-// For now, we assume backend sends a raw string, we would need a lib to render it.
-// To keep it simple, we'll placeholder this or strictly use Phone Pairing for now
-// as we didn't add a client-side QRCode lib in the html yet.
+// Listen for QR
 socket.on('qr', (qrData) => {
-    // If we had a QR lib, we'd render it here.
-    // document.getElementById('qr-status').innerText = "Scan Code Now";
-    // TODO: Add qrcode.js via CDN or local assets if needed.
-    // For now, we'll just log it.
-    console.log("QR Received:", qrData);
+    const qrImg = document.getElementById('qr-image');
+    const qrStatus = document.getElementById('qr-status');
+
+    if (typeof QRCode !== 'undefined') {
+        QRCode.toDataURL(qrData, { width: 300, margin: 2 }, (err, url) => {
+            if (err) {
+                console.error("QR Generation Error:", err);
+                if (qrStatus) qrStatus.innerText = "Error generating QR Code";
+                return;
+            }
+            if (qrImg) {
+                qrImg.src = url;
+                qrImg.style.display = "block";
+            }
+            if (qrStatus) qrStatus.innerText = "Scan Code Now";
+
+            // Hide scanner animation line if it exists
+            const scannerLine = document.querySelector('.scanner-line');
+            if (scannerLine) scannerLine.style.display = 'none';
+        });
+    } else {
+        console.warn("QRCode library not loaded yet.");
+        console.log("QR Data:", qrData);
+    }
 });
